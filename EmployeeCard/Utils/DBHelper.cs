@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,16 +22,78 @@ namespace EmployeeCard.Utils
     {
             public static bool InsertEntry(string tableName, Dictionary<string, TableField> fields)
             {
-                return false;
+            try
+            {
+                var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
+                var fieldsNames = string.Join(",", fields.Select(f => f.Key));
+                var fieldsValues = string.Join(",", fields.Select(f =>
+                {
+                    if (f.Value.TableFieldType == TableFieldTypes.integer)
+                    {
+                        return f.Value.TableFieldValue;
+                    }
+                    return $"'{f.Value.TableFieldValue}'";
+                }));
+
+                var query = $"INSERT INTO {tableName} ({fieldsValues}) VALUES ({fieldsValues})";
+                var cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
             }
-            public static bool UpdateEntry(string tableName, int id, Dictionary<string, TableField> fields)
+            catch
             {
                 return false;
             }
+            }
+            public static bool UpdateEntry(string tableName, int id, Dictionary<string, TableField> fields)
+            {
+            try
+            {
+                var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
+                var updatingFieldsValues = string.Join(", ", fields.Select (f =>
+                {
+                    var fieldValue = string.Empty;
+                    if (f.Value.TableFieldType == TableFieldTypes.integer)
+                    {
+                        fieldValue = f.Value.TableFieldValue;
+                    }
+                    else
+                    {
+                        fieldValue = $"'{f.Value.TableFieldValue}'";
+                    }
+                    return $"{f.Key} = {fieldValue}";
+                }));
+                var query = $"UPDATE {tableName} SET {updatingFieldsValues} WHERE Id = {id}";
+                var cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
             public static bool DeleteEntry(string tableName, int id) 
-            { 
-                return false; 
+            {
+            try
+            {
+                var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
+                var query = $"DELETE FROM {tableName} WHERE Id = {id}";
+                var cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
             }
     }
 }
