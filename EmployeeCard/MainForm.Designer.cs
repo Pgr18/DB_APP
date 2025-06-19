@@ -36,51 +36,6 @@
             this.создатьОтделToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сотрудникиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьСотрудникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.Отделы = new System.Windows.Forms.GroupBox();
-            this.DepartmentsCB = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.employeeGV = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.employeesDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeesDBDataSet = new EmployeeCard.EmployeesDBDataSet();
-            this.employeessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeessTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.EmployeessTableAdapter();
-            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentsTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.DepartmentsTableAdapter();
-            this.employeessBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.Address = new System.Windows.Forms.RichTextBox();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.Education = new System.Windows.Forms.RichTextBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.управлениеДаннымиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отделыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,37 +45,82 @@
             this.добавитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.изменитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.Отделы = new System.Windows.Forms.GroupBox();
+            this.DepartmentsCB = new System.Windows.Forms.ComboBox();
+            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeesDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeesDBDataSet = new EmployeeCard.EmployeesDBDataSet();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.employeeGV = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeessBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.Address = new System.Windows.Forms.RichTextBox();
             this.emplPersonalDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.emplPersonalDataTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.EmplPersonalDataTableAdapter();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.emplWorkDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.Education = new System.Windows.Forms.RichTextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.employeessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeessTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.EmployeessTableAdapter();
+            this.departmentsTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.DepartmentsTableAdapter();
+            this.emplPersonalDataTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.EmplPersonalDataTableAdapter();
             this.emplWorkDataTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.EmplWorkDataTableAdapter();
             this.createEmplMenuItem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.Отделы.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emplPersonalDataBindingSource)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emplWorkDataBindingSource)).BeginInit();
+            this.groupBox10.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // createEmplMenuItem
@@ -154,7 +154,7 @@
             // создатьОтделToolStripMenuItem
             // 
             this.создатьОтделToolStripMenuItem.Name = "создатьОтделToolStripMenuItem";
-            this.создатьОтделToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.создатьОтделToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.создатьОтделToolStripMenuItem.Text = "Создать отдел";
             // 
             // сотрудникиToolStripMenuItem
@@ -162,7 +162,7 @@
             this.сотрудникиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьСотрудникаToolStripMenuItem});
             this.сотрудникиToolStripMenuItem.Name = "сотрудникиToolStripMenuItem";
-            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.сотрудникиToolStripMenuItem.Size = new System.Drawing.Size(190, 26);
             this.сотрудникиToolStripMenuItem.Text = "Сотрудники";
             // 
             // добавитьСотрудникаToolStripMenuItem
@@ -170,6 +170,74 @@
             this.добавитьСотрудникаToolStripMenuItem.Name = "добавитьСотрудникаToolStripMenuItem";
             this.добавитьСотрудникаToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.добавитьСотрудникаToolStripMenuItem.Text = "Добавить сотрудника";
+            // 
+            // управлениеДаннымиToolStripMenuItem
+            // 
+            this.управлениеДаннымиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.отделыToolStripMenuItem1,
+            this.сотрудникиToolStripMenuItem1});
+            this.управлениеДаннымиToolStripMenuItem.Name = "управлениеДаннымиToolStripMenuItem";
+            this.управлениеДаннымиToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
+            this.управлениеДаннымиToolStripMenuItem.Text = "Управление данными";
+            // 
+            // отделыToolStripMenuItem1
+            // 
+            this.отделыToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьToolStripMenuItem,
+            this.изменитьToolStripMenuItem,
+            this.удалитьToolStripMenuItem});
+            this.отделыToolStripMenuItem1.Name = "отделыToolStripMenuItem1";
+            this.отделыToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.отделыToolStripMenuItem1.Text = "Отделы";
+            // 
+            // добавитьToolStripMenuItem
+            // 
+            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
+            // 
+            // изменитьToolStripMenuItem
+            // 
+            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.изменитьToolStripMenuItem.Text = "Изменить";
+            this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
+            // 
+            // удалитьToolStripMenuItem
+            // 
+            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
+            // 
+            // сотрудникиToolStripMenuItem1
+            // 
+            this.сотрудникиToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.добавитьToolStripMenuItem1,
+            this.изменитьToolStripMenuItem1,
+            this.удалитьToolStripMenuItem1});
+            this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
+            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(174, 26);
+            this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
+            // 
+            // добавитьToolStripMenuItem1
+            // 
+            this.добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
+            this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
+            this.добавитьToolStripMenuItem1.Text = "Добавить";
+            // 
+            // изменитьToolStripMenuItem1
+            // 
+            this.изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
+            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
+            this.изменитьToolStripMenuItem1.Text = "Изменить";
+            // 
+            // удалитьToolStripMenuItem1
+            // 
+            this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
+            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
+            this.удалитьToolStripMenuItem1.Text = "Удалить";
             // 
             // tableLayoutPanel1
             // 
@@ -180,7 +248,7 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 28);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -198,7 +266,7 @@
             this.tableLayoutPanel2.Controls.Add(this.toolStrip1, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
@@ -212,9 +280,9 @@
             this.Отделы.Controls.Add(this.DepartmentsCB);
             this.Отделы.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Отделы.Location = new System.Drawing.Point(4, 4);
-            this.Отделы.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Отделы.Margin = new System.Windows.Forms.Padding(4);
             this.Отделы.Name = "Отделы";
-            this.Отделы.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Отделы.Padding = new System.Windows.Forms.Padding(4);
             this.Отделы.Size = new System.Drawing.Size(451, 42);
             this.Отделы.TabIndex = 0;
             this.Отделы.TabStop = false;
@@ -229,19 +297,35 @@
             this.DepartmentsCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DepartmentsCB.FormattingEnabled = true;
             this.DepartmentsCB.Location = new System.Drawing.Point(4, 19);
-            this.DepartmentsCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DepartmentsCB.Margin = new System.Windows.Forms.Padding(4);
             this.DepartmentsCB.Name = "DepartmentsCB";
             this.DepartmentsCB.Size = new System.Drawing.Size(443, 24);
             this.DepartmentsCB.TabIndex = 0;
+            this.DepartmentsCB.SelectedIndexChanged += new System.EventHandler(this.DepartmentsCB_SelectedIndexChanged);
+            // 
+            // departmentsBindingSource
+            // 
+            this.departmentsBindingSource.DataMember = "Departments";
+            this.departmentsBindingSource.DataSource = this.employeesDBBindingSource;
+            // 
+            // employeesDBBindingSource
+            // 
+            this.employeesDBBindingSource.DataSource = this.employeesDBDataSet;
+            this.employeesDBBindingSource.Position = 0;
+            // 
+            // employeesDBDataSet
+            // 
+            this.employeesDBDataSet.DataSetName = "EmployeesDBDataSet";
+            this.employeesDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.employeeGV);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(4, 54);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(451, 750);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -263,7 +347,7 @@
             this.employeeGV.DataSource = this.employeessBindingSource1;
             this.employeeGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeeGV.Location = new System.Drawing.Point(4, 19);
-            this.employeeGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.employeeGV.Margin = new System.Windows.Forms.Padding(4);
             this.employeeGV.Name = "employeeGV";
             this.employeeGV.ReadOnly = true;
             this.employeeGV.RowHeadersVisible = false;
@@ -271,39 +355,7 @@
             this.employeeGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.employeeGV.Size = new System.Drawing.Size(443, 727);
             this.employeeGV.TabIndex = 0;
-            // 
-            // employeesDBBindingSource
-            // 
-            this.employeesDBBindingSource.DataSource = this.employeesDBDataSet;
-            this.employeesDBBindingSource.Position = 0;
-            // 
-            // employeesDBDataSet
-            // 
-            this.employeesDBDataSet.DataSetName = "EmployeesDBDataSet";
-            this.employeesDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeessBindingSource
-            // 
-            this.employeessBindingSource.DataMember = "Employeess";
-            this.employeessBindingSource.DataSource = this.employeesDBBindingSource;
-            // 
-            // employeessTableAdapter
-            // 
-            this.employeessTableAdapter.ClearBeforeFill = true;
-            // 
-            // departmentsBindingSource
-            // 
-            this.departmentsBindingSource.DataMember = "Departments";
-            this.departmentsBindingSource.DataSource = this.employeesDBBindingSource;
-            // 
-            // departmentsTableAdapter
-            // 
-            this.departmentsTableAdapter.ClearBeforeFill = true;
-            // 
-            // employeessBindingSource1
-            // 
-            this.employeessBindingSource1.DataMember = "Employeess";
-            this.employeessBindingSource1.DataSource = this.employeesDBBindingSource;
+            this.employeeGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeGV_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -352,242 +404,10 @@
             this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
             this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // groupBox2
+            // employeessBindingSource1
             // 
-            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(470, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(972, 860);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Данные о сотруднике";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.groupBox3, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.groupBox4, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 18);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(966, 839);
-            this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.tableLayoutPanel4);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(960, 413);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Персональные данные";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.tableLayoutPanel5);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(3, 422);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(960, 414);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Рабочие данные";
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.groupBox8, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.groupBox7, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.groupBox6, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.groupBox5, 0, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 18);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 4;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 392);
-            this.tableLayoutPanel4.TabIndex = 0;
-            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.textBox1);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 3);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(948, 44);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Возраст";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplPersonalDataBindingSource, "Age", true));
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(3, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(942, 22);
-            this.textBox1.TabIndex = 0;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.textBox2);
-            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(3, 53);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(948, 44);
-            this.groupBox6.TabIndex = 1;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Дата рождения";
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplPersonalDataBindingSource, "BirthDate", true));
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(3, 18);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(942, 22);
-            this.textBox2.TabIndex = 0;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.textBox3);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.Location = new System.Drawing.Point(3, 103);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(948, 44);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Гражданство";
-            // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplPersonalDataBindingSource, "Citizenship", true));
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(3, 18);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(942, 22);
-            this.textBox3.TabIndex = 0;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.Address);
-            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox8.Location = new System.Drawing.Point(3, 153);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(948, 236);
-            this.groupBox8.TabIndex = 3;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Адрес регистрации";
-            // 
-            // Address
-            // 
-            this.Address.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplPersonalDataBindingSource, "Address", true));
-            this.Address.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Address.Enabled = false;
-            this.Address.Location = new System.Drawing.Point(3, 18);
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(942, 215);
-            this.Address.TabIndex = 0;
-            this.Address.Text = "";
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.groupBox11, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox10, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox9, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 18);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(954, 393);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.textBox4);
-            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox9.Location = new System.Drawing.Point(3, 3);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(948, 44);
-            this.groupBox9.TabIndex = 1;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Должность";
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplWorkDataBindingSource, "Post", true));
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(3, 18);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(942, 22);
-            this.textBox4.TabIndex = 0;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.Education);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox10.Location = new System.Drawing.Point(3, 53);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(948, 287);
-            this.groupBox10.TabIndex = 2;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Образование";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.textBox6);
-            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox11.Location = new System.Drawing.Point(3, 346);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(948, 44);
-            this.groupBox11.TabIndex = 3;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Опыт работы";
-            // 
-            // textBox6
-            // 
-            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplWorkDataBindingSource, "WorkExperience", true));
-            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(3, 18);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(942, 22);
-            this.textBox6.TabIndex = 0;
-            // 
-            // Education
-            // 
-            this.Education.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplWorkDataBindingSource, "Education", true));
-            this.Education.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Education.Location = new System.Drawing.Point(3, 18);
-            this.Education.Name = "Education";
-            this.Education.Size = new System.Drawing.Size(942, 266);
-            this.Education.TabIndex = 0;
-            this.Education.Text = "";
+            this.employeessBindingSource1.DataMember = "Employeess";
+            this.employeessBindingSource1.DataSource = this.employeesDBBindingSource;
             // 
             // toolStrip1
             // 
@@ -641,84 +461,269 @@
             this.toolStripButton3.Size = new System.Drawing.Size(69, 24);
             this.toolStripButton3.Text = "Удалить";
             // 
-            // управлениеДаннымиToolStripMenuItem
+            // groupBox2
             // 
-            this.управлениеДаннымиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.отделыToolStripMenuItem1,
-            this.сотрудникиToolStripMenuItem1});
-            this.управлениеДаннымиToolStripMenuItem.Name = "управлениеДаннымиToolStripMenuItem";
-            this.управлениеДаннымиToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
-            this.управлениеДаннымиToolStripMenuItem.Text = "Управление данными";
+            this.groupBox2.Controls.Add(this.tableLayoutPanel3);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(470, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(972, 860);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Данные о сотруднике";
             // 
-            // отделыToolStripMenuItem1
+            // tableLayoutPanel3
             // 
-            this.отделыToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьToolStripMenuItem,
-            this.изменитьToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
-            this.отделыToolStripMenuItem1.Name = "отделыToolStripMenuItem1";
-            this.отделыToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.отделыToolStripMenuItem1.Text = "Отделы";
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.groupBox3, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox4, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(966, 839);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // добавитьToolStripMenuItem
+            // groupBox3
             // 
-            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.groupBox3.Controls.Add(this.tableLayoutPanel4);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(960, 413);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Персональные данные";
             // 
-            // изменитьToolStripMenuItem
+            // tableLayoutPanel4
             // 
-            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.изменитьToolStripMenuItem.Text = "Изменить";
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Controls.Add(this.groupBox8, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.groupBox7, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.groupBox6, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.groupBox5, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 4;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 392);
+            this.tableLayoutPanel4.TabIndex = 0;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
-            // удалитьToolStripMenuItem
+            // groupBox8
             // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.groupBox8.Controls.Add(this.Address);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox8.Location = new System.Drawing.Point(3, 153);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(948, 236);
+            this.groupBox8.TabIndex = 3;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Адрес регистрации";
             // 
-            // сотрудникиToolStripMenuItem1
+            // Address
             // 
-            this.сотрудникиToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьToolStripMenuItem1,
-            this.изменитьToolStripMenuItem1,
-            this.удалитьToolStripMenuItem1});
-            this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
-            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
-            // 
-            // добавитьToolStripMenuItem1
-            // 
-            this.добавитьToolStripMenuItem1.Name = "добавитьToolStripMenuItem1";
-            this.добавитьToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.добавитьToolStripMenuItem1.Text = "Добавить";
-            // 
-            // изменитьToolStripMenuItem1
-            // 
-            this.изменитьToolStripMenuItem1.Name = "изменитьToolStripMenuItem1";
-            this.изменитьToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.изменитьToolStripMenuItem1.Text = "Изменить";
-            // 
-            // удалитьToolStripMenuItem1
-            // 
-            this.удалитьToolStripMenuItem1.Name = "удалитьToolStripMenuItem1";
-            this.удалитьToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.удалитьToolStripMenuItem1.Text = "Удалить";
+            this.Address.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplPersonalDataBindingSource, "Address", true));
+            this.Address.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Address.Enabled = false;
+            this.Address.Location = new System.Drawing.Point(3, 18);
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(942, 215);
+            this.Address.TabIndex = 0;
+            this.Address.Text = "";
             // 
             // emplPersonalDataBindingSource
             // 
             this.emplPersonalDataBindingSource.DataMember = "EmplPersonalData";
             this.emplPersonalDataBindingSource.DataSource = this.employeesDBBindingSource;
             // 
-            // emplPersonalDataTableAdapter
+            // groupBox7
             // 
-            this.emplPersonalDataTableAdapter.ClearBeforeFill = true;
+            this.groupBox7.Controls.Add(this.textBox3);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Location = new System.Drawing.Point(3, 103);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(948, 44);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Гражданство";
+            // 
+            // textBox3
+            // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplPersonalDataBindingSource, "Citizenship", true));
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(3, 18);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(942, 22);
+            this.textBox3.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textBox2);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Location = new System.Drawing.Point(3, 53);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(948, 44);
+            this.groupBox6.TabIndex = 1;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Дата рождения";
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplPersonalDataBindingSource, "BirthDate", true));
+            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox2.Enabled = false;
+            this.textBox2.Location = new System.Drawing.Point(3, 18);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(942, 22);
+            this.textBox2.TabIndex = 0;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox1);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(3, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(948, 44);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Возраст";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplPersonalDataBindingSource, "Age", true));
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(3, 18);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(942, 22);
+            this.textBox1.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.tableLayoutPanel5);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(3, 422);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(960, 414);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Рабочие данные";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.groupBox11, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox10, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox9, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 18);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(954, 393);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.textBox6);
+            this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox11.Location = new System.Drawing.Point(3, 346);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(948, 44);
+            this.groupBox11.TabIndex = 3;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Опыт работы";
+            // 
+            // textBox6
+            // 
+            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplWorkDataBindingSource, "WorkExperience", true));
+            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(3, 18);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(942, 22);
+            this.textBox6.TabIndex = 0;
             // 
             // emplWorkDataBindingSource
             // 
             this.emplWorkDataBindingSource.DataMember = "EmplWorkData";
             this.emplWorkDataBindingSource.DataSource = this.employeesDBBindingSource;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.Education);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox10.Location = new System.Drawing.Point(3, 53);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(948, 287);
+            this.groupBox10.TabIndex = 2;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Образование";
+            // 
+            // Education
+            // 
+            this.Education.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplWorkDataBindingSource, "Education", true));
+            this.Education.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Education.Location = new System.Drawing.Point(3, 18);
+            this.Education.Name = "Education";
+            this.Education.Size = new System.Drawing.Size(942, 266);
+            this.Education.TabIndex = 0;
+            this.Education.Text = "";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.textBox4);
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox9.Location = new System.Drawing.Point(3, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(948, 44);
+            this.groupBox9.TabIndex = 1;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Должность";
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.emplWorkDataBindingSource, "Post", true));
+            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox4.Enabled = false;
+            this.textBox4.Location = new System.Drawing.Point(3, 18);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(942, 22);
+            this.textBox4.TabIndex = 0;
+            // 
+            // employeessBindingSource
+            // 
+            this.employeessBindingSource.DataMember = "Employeess";
+            this.employeessBindingSource.DataSource = this.employeesDBBindingSource;
+            // 
+            // employeessTableAdapter
+            // 
+            this.employeessTableAdapter.ClearBeforeFill = true;
+            // 
+            // departmentsTableAdapter
+            // 
+            this.departmentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // emplPersonalDataTableAdapter
+            // 
+            this.emplPersonalDataTableAdapter.ClearBeforeFill = true;
             // 
             // emplWorkDataTableAdapter
             // 
@@ -732,7 +737,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.createEmplMenuItem);
             this.MainMenuStrip = this.createEmplMenuItem;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1463, 941);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -744,35 +749,35 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.Отделы.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.employeeGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDBBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.emplPersonalDataBindingSource)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.emplPersonalDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emplWorkDataBindingSource)).EndInit();
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

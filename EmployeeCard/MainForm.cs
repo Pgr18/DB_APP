@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace EmployeeCard
 {
+
     public partial class MainForm : Form
     {
         public MainForm()
         {
             InitializeComponent();
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -55,6 +57,41 @@ namespace EmployeeCard
         }
 
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void employeeGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void RefreshData()
+        {
+            this.emplWorkDataTableAdapter.Fill(this.employeesDBDataSet.EmplWorkData);
+            this.emplPersonalDataTableAdapter.Fill(this.employeesDBDataSet.EmplPersonalData);
+            this.employeessTableAdapter.Fill(this.employeesDBDataSet.Employeess);
+            this.departmentsTableAdapter.Fill(this.employeesDBDataSet.Departments);
+        }
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (new DeleteDepForm().ShowDialog() == DialogResult.OK)
+            {
+                RefreshData();
+            }
+
+        }
+
+        private void DepartmentsCB_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
