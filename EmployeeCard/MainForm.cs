@@ -1,23 +1,41 @@
-﻿using EmployeeCard.Utils;
+﻿using EmployeeCard.EmployeesDBDataSetTableAdapters;
+using EmployeeCard.exporttoExcelDataSetTableAdapters;
+using EmployeeCard.Utils;
+using ExelExporter;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WordTemplateFiller;
+using WordTemplateFiller.Models;
 
 namespace EmployeeCard
 {
 
     public partial class MainForm : Form
     {
+        private const string templatesFolderName = "Templates";
+        private const string templateFileName = "Card.docx";
+        private string templatePath;
+
+        private const int lastNameColumnIdx = 2;
+        private const int firstNameColumnIdx = 3;
+        private const int patronimicColumnIdx = 4;
+
         public MainForm()
         {
             InitializeComponent();
+            var currentAssemblyPath = Assembly.GetExecutingAssembly().Location;
+            var currentFolder = Path.GetDirectoryName(currentAssemblyPath);
+            templatePath = $"D:\\DB_APP\\EmployeeCard\\{templatesFolderName}\\{templateFileName}";
 
         }
 
@@ -63,7 +81,7 @@ namespace EmployeeCard
 
         private void employeeGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //ageTxt.DataBindings.Add(employeeGV.);
         }
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,6 +122,7 @@ namespace EmployeeCard
         }
         private void RefreshData()
         {
+            
             this.emplWorkDataTableAdapter.Fill(this.employeesDBDataSet.EmplWorkData);
             this.emplPersonalDataTableAdapter.Fill(this.employeesDBDataSet.EmplPersonalData);
             this.employeessTableAdapter.Fill(this.employeesDBDataSet.Employeess);
@@ -164,14 +183,14 @@ namespace EmployeeCard
 
         void DeleteEmployee()
         {
-            if(employeeGV.Rows.Count == 0 || employeeGV.SelectedRows.Count == 0)
+            if (employeeGV.Rows.Count == 0 || employeeGV.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Не выбран ни один сотрудник!");
                 return;
             }
 
             var id = 0;
-            int.TryParse(employeeGV.SelectedRows[0].Cells[0].Value?.ToString(),out id);
+            int.TryParse(employeeGV.SelectedRows[0].Cells[0].Value?.ToString(), out id);
 
             var firstName = employeeGV.SelectedRows[0].Cells[3].Value?.ToString() ?? string.Empty;
             var lastName = employeeGV.SelectedRows[0].Cells[2].Value?.ToString() ?? string.Empty;
@@ -188,7 +207,7 @@ namespace EmployeeCard
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)//deleteBtn
-            =>DeleteEmployee();
+            => DeleteEmployee();
 
         private void удалитьToolStripMenuItem1_Click(object sender, EventArgs e)
             => DeleteEmployee();
@@ -224,14 +243,15 @@ namespace EmployeeCard
                 {
                     RefreshEmployees();
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-               
 
-            }
-        
+
+        }
+
 
 
         private void изменитьToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -284,9 +304,139 @@ namespace EmployeeCard
                 {
                     workExpDisplayTxt.Text = string.Empty;
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 workExpDisplayTxt.Clear();
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void createEmplMenuItem_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void WordExportBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (employeeGV.Rows.Count == 0)
+                {
+                    MessageBox.Show("Список сотрудников пуст");
+                    return;
+                }
+
+                if (exportToWordFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var path = exportToWordFileDialog.FileName;
+
+                    var employeeGVSelectedRow = employeeGV.SelectedRows[0];
+                    var fio = $"{employeeGVSelectedRow.Cells[lastNameColumnIdx].Value} {employeeGVSelectedRow.Cells[firstNameColumnIdx].Value} {employeeGVSelectedRow.Cells[patronimicColumnIdx].Value}";
+
+
+                    var bmList = new List<BookMark>
+                {
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "FIO",
+                        BookMarkValue = fio
+                    },
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "CITIZENSHIP",
+                        BookMarkValue = citizenshipTxt.Text
+                    },
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "DATE",
+                        BookMarkValue = birthdateTxt.Text
+                    },
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "AGE",
+                        BookMarkValue = ageTxt.Text
+                    },
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "",
+                        BookMarkValue = ""
+                    },//??????????
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "POST",
+                        BookMarkValue = PostTxt.Text
+                    },
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "OTDEL",
+                        BookMarkValue = departmentCB.Text
+                    },
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "WORKYEARS",
+                        BookMarkValue = workExpDisplayTxt.Text
+                    },
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "ADDRESS",
+                        BookMarkValue = Address.Text
+                    },
+                    new BookMark {
+                        BookMarkType = BookMarkType.Text,
+                        BookMarkName = "EDUCATION",
+                        BookMarkValue = Education.Text
+                    }
+
+                };
+                    new DocumentManager(templatePath, bmList).saveDocument(path);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void экспортБДВExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (exportToExcelDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = exportToExcelDialog.FileName;
+                    new ExcelExportManager().ExportDataSet(employeesDBDataSet, filePath);
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString()); 
+            }
+        }
+
+        private void exportToExcelBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exportToExcelBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (exportToExcelDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = exportToExcelDialog.FileName;
+
+                    var departmentId = 0;
+                    int.TryParse(departmentCB.SelectedValue.ToString(), out departmentId);
+
+                    var exportTableAdapter = new ExportToExcelTableAdapter();
+                    exportTableAdapter.Fill(exporttoExcelDataSet.Employeess,departmentId);
+
+                    new ExcelExportManager().ExportDataSet(exporttoExcelDataSet,filePath);
+                }
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.ToString());
             }
         }

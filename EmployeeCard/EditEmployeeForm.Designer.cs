@@ -31,45 +31,45 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.departmentCB = new System.Windows.Forms.ComboBox();
+            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeesDBDataSet = new EmployeeCard.EmployeesDBDataSet();
             this.persGB = new System.Windows.Forms.GroupBox();
-            this.workGB = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lastNamelbl = new System.Windows.Forms.Label();
-            this.lastNameTxt = new System.Windows.Forms.TextBox();
-            this.firstNameTxt = new System.Windows.Forms.TextBox();
-            this.middleNameTxt = new System.Windows.Forms.TextBox();
-            this.firstNamelbl = new System.Windows.Forms.Label();
-            this.middleNamelbl = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimebirth = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.citizenTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.addressTxt = new System.Windows.Forms.RichTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.PostTxt = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.educationTxt = new System.Windows.Forms.RichTextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.editEmployeeDataSet = new EmployeeCard.EditEmployeeDataSet();
+            this.label5 = new System.Windows.Forms.Label();
+            this.citizenTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimebirth = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.middleNamelbl = new System.Windows.Forms.Label();
+            this.firstNamelbl = new System.Windows.Forms.Label();
+            this.middleNameTxt = new System.Windows.Forms.TextBox();
+            this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.firstNameTxt = new System.Windows.Forms.TextBox();
+            this.lastNameTxt = new System.Windows.Forms.TextBox();
+            this.lastNamelbl = new System.Windows.Forms.Label();
+            this.workGB = new System.Windows.Forms.GroupBox();
             this.dateTimecareer = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.educationTxt = new System.Windows.Forms.RichTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.PostTxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.saveEmplBtn = new System.Windows.Forms.Button();
             this.cancelEmplBtn = new System.Windows.Forms.Button();
-            this.employeesDBDataSet = new EmployeeCard.EmployeesDBDataSet();
             this.employeesDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.departmentsTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.DepartmentsTableAdapter();
-            this.editEmployeeDataSet = new EmployeeCard.EditEmployeeDataSet();
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new EmployeeCard.EditEmployeeDataSetTableAdapters.DataTable1TableAdapter();
-            this.dataTable1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.persGB.SuspendLayout();
-            this.workGB.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editEmployeeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSet)).BeginInit();
+            this.persGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editEmployeeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).BeginInit();
+            this.workGB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -95,6 +95,16 @@
             this.departmentCB.TabIndex = 1;
             this.departmentCB.ValueMember = "Id";
             // 
+            // departmentsBindingSource
+            // 
+            this.departmentsBindingSource.DataMember = "Departments";
+            this.departmentsBindingSource.DataSource = this.employeesDBDataSet;
+            // 
+            // employeesDBDataSet
+            // 
+            this.employeesDBDataSet.DataSetName = "EmployeesDBDataSet";
+            this.employeesDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // persGB
             // 
             this.persGB.Controls.Add(this.addressTxt);
@@ -117,6 +127,127 @@
             this.persGB.Text = "Персональные данные";
             this.persGB.Enter += new System.EventHandler(this.persGB_Enter);
             // 
+            // addressTxt
+            // 
+            this.addressTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Address", true));
+            this.addressTxt.Location = new System.Drawing.Point(7, 296);
+            this.addressTxt.Name = "addressTxt";
+            this.addressTxt.Size = new System.Drawing.Size(365, 94);
+            this.addressTxt.TabIndex = 11;
+            this.addressTxt.Text = "";
+            // 
+            // dataTable1BindingSource
+            // 
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.editEmployeeDataSet;
+            // 
+            // editEmployeeDataSet
+            // 
+            this.editEmployeeDataSet.DataSetName = "EditEmployeeDataSet";
+            this.editEmployeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 276);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(134, 16);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Адрес регистрации";
+            // 
+            // citizenTxt
+            // 
+            this.citizenTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Citizenship", true));
+            this.citizenTxt.Location = new System.Drawing.Point(6, 247);
+            this.citizenTxt.Name = "citizenTxt";
+            this.citizenTxt.Size = new System.Drawing.Size(369, 22);
+            this.citizenTxt.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 227);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Гражданство";
+            // 
+            // dateTimebirth
+            // 
+            this.dateTimebirth.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "BirthDate", true));
+            this.dateTimebirth.Location = new System.Drawing.Point(6, 193);
+            this.dateTimebirth.Name = "dateTimebirth";
+            this.dateTimebirth.Size = new System.Drawing.Size(369, 22);
+            this.dateTimebirth.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 173);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(106, 16);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Дата рождения";
+            // 
+            // middleNamelbl
+            // 
+            this.middleNamelbl.AutoSize = true;
+            this.middleNamelbl.Location = new System.Drawing.Point(3, 125);
+            this.middleNamelbl.Name = "middleNamelbl";
+            this.middleNamelbl.Size = new System.Drawing.Size(70, 16);
+            this.middleNamelbl.TabIndex = 5;
+            this.middleNamelbl.Text = "Отчество";
+            // 
+            // firstNamelbl
+            // 
+            this.firstNamelbl.AutoSize = true;
+            this.firstNamelbl.Location = new System.Drawing.Point(3, 68);
+            this.firstNamelbl.Name = "firstNamelbl";
+            this.firstNamelbl.Size = new System.Drawing.Size(33, 16);
+            this.firstNamelbl.TabIndex = 4;
+            this.firstNamelbl.Text = "Имя";
+            // 
+            // middleNameTxt
+            // 
+            this.middleNameTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource1, "MiddleName", true));
+            this.middleNameTxt.Location = new System.Drawing.Point(6, 144);
+            this.middleNameTxt.Name = "middleNameTxt";
+            this.middleNameTxt.Size = new System.Drawing.Size(369, 22);
+            this.middleNameTxt.TabIndex = 3;
+            // 
+            // dataTable1BindingSource1
+            // 
+            this.dataTable1BindingSource1.DataMember = "DataTable1";
+            this.dataTable1BindingSource1.DataSource = this.editEmployeeDataSet;
+            // 
+            // firstNameTxt
+            // 
+            this.firstNameTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource1, "FirstName", true));
+            this.firstNameTxt.Location = new System.Drawing.Point(6, 87);
+            this.firstNameTxt.Name = "firstNameTxt";
+            this.firstNameTxt.Size = new System.Drawing.Size(369, 22);
+            this.firstNameTxt.TabIndex = 2;
+            // 
+            // lastNameTxt
+            // 
+            this.lastNameTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "LastName", true));
+            this.lastNameTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lastNameTxt.Location = new System.Drawing.Point(3, 34);
+            this.lastNameTxt.Name = "lastNameTxt";
+            this.lastNameTxt.Size = new System.Drawing.Size(372, 22);
+            this.lastNameTxt.TabIndex = 1;
+            // 
+            // lastNamelbl
+            // 
+            this.lastNamelbl.AutoSize = true;
+            this.lastNamelbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lastNamelbl.Location = new System.Drawing.Point(3, 18);
+            this.lastNamelbl.Name = "lastNamelbl";
+            this.lastNamelbl.Size = new System.Drawing.Size(66, 16);
+            this.lastNamelbl.TabIndex = 0;
+            this.lastNamelbl.Text = "Фамилия";
+            this.lastNamelbl.Click += new System.EventHandler(this.label3_Click);
+            // 
             // workGB
             // 
             this.workGB.Controls.Add(this.dateTimecareer);
@@ -132,156 +263,13 @@
             this.workGB.TabStop = false;
             this.workGB.Text = "Рабочие данные";
             // 
-            // label2
+            // dateTimecareer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Отдел";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // lastNamelbl
-            // 
-            this.lastNamelbl.AutoSize = true;
-            this.lastNamelbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lastNamelbl.Location = new System.Drawing.Point(3, 18);
-            this.lastNamelbl.Name = "lastNamelbl";
-            this.lastNamelbl.Size = new System.Drawing.Size(66, 16);
-            this.lastNamelbl.TabIndex = 0;
-            this.lastNamelbl.Text = "Фамилия";
-            this.lastNamelbl.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // lastNameTxt
-            // 
-            this.lastNameTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "LastName", true));
-            this.lastNameTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lastNameTxt.Location = new System.Drawing.Point(3, 34);
-            this.lastNameTxt.Name = "lastNameTxt";
-            this.lastNameTxt.Size = new System.Drawing.Size(372, 22);
-            this.lastNameTxt.TabIndex = 1;
-            // 
-            // firstNameTxt
-            // 
-            this.firstNameTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource1, "FirstName", true));
-            this.firstNameTxt.Location = new System.Drawing.Point(6, 87);
-            this.firstNameTxt.Name = "firstNameTxt";
-            this.firstNameTxt.Size = new System.Drawing.Size(369, 22);
-            this.firstNameTxt.TabIndex = 2;
-            // 
-            // middleNameTxt
-            // 
-            this.middleNameTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource1, "MiddleName", true));
-            this.middleNameTxt.Location = new System.Drawing.Point(6, 144);
-            this.middleNameTxt.Name = "middleNameTxt";
-            this.middleNameTxt.Size = new System.Drawing.Size(369, 22);
-            this.middleNameTxt.TabIndex = 3;
-            // 
-            // firstNamelbl
-            // 
-            this.firstNamelbl.AutoSize = true;
-            this.firstNamelbl.Location = new System.Drawing.Point(3, 68);
-            this.firstNamelbl.Name = "firstNamelbl";
-            this.firstNamelbl.Size = new System.Drawing.Size(33, 16);
-            this.firstNamelbl.TabIndex = 4;
-            this.firstNamelbl.Text = "Имя";
-            // 
-            // middleNamelbl
-            // 
-            this.middleNamelbl.AutoSize = true;
-            this.middleNamelbl.Location = new System.Drawing.Point(3, 125);
-            this.middleNamelbl.Name = "middleNamelbl";
-            this.middleNamelbl.Size = new System.Drawing.Size(70, 16);
-            this.middleNamelbl.TabIndex = 5;
-            this.middleNamelbl.Text = "Отчество";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 173);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Дата рождения";
-            // 
-            // dateTimebirth
-            // 
-            this.dateTimebirth.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "BirthDate", true));
-            this.dateTimebirth.Location = new System.Drawing.Point(6, 193);
-            this.dateTimebirth.Name = "dateTimebirth";
-            this.dateTimebirth.Size = new System.Drawing.Size(369, 22);
-            this.dateTimebirth.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 227);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Гражданство";
-            // 
-            // citizenTxt
-            // 
-            this.citizenTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Citizenship", true));
-            this.citizenTxt.Location = new System.Drawing.Point(6, 247);
-            this.citizenTxt.Name = "citizenTxt";
-            this.citizenTxt.Size = new System.Drawing.Size(369, 22);
-            this.citizenTxt.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 276);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Адрес регистрации";
-            // 
-            // addressTxt
-            // 
-            this.addressTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Address", true));
-            this.addressTxt.Location = new System.Drawing.Point(7, 296);
-            this.addressTxt.Name = "addressTxt";
-            this.addressTxt.Size = new System.Drawing.Size(365, 94);
-            this.addressTxt.TabIndex = 11;
-            this.addressTxt.Text = "";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Должность";
-            // 
-            // PostTxt
-            // 
-            this.PostTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Post", true));
-            this.PostTxt.Location = new System.Drawing.Point(7, 33);
-            this.PostTxt.Name = "PostTxt";
-            this.PostTxt.Size = new System.Drawing.Size(364, 22);
-            this.PostTxt.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 68);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 16);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Образование";
-            // 
-            // educationTxt
-            // 
-            this.educationTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Education", true));
-            this.educationTxt.Location = new System.Drawing.Point(6, 87);
-            this.educationTxt.Name = "educationTxt";
-            this.educationTxt.Size = new System.Drawing.Size(365, 128);
-            this.educationTxt.TabIndex = 12;
-            this.educationTxt.Text = "";
+            this.dateTimecareer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "WorkExperience", true));
+            this.dateTimecareer.Location = new System.Drawing.Point(6, 247);
+            this.dateTimecareer.Name = "dateTimecareer";
+            this.dateTimecareer.Size = new System.Drawing.Size(369, 22);
+            this.dateTimecareer.TabIndex = 12;
             // 
             // label8
             // 
@@ -292,13 +280,50 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Дата начала карьеры";
             // 
-            // dateTimecareer
+            // educationTxt
             // 
-            this.dateTimecareer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "WorkExperience", true));
-            this.dateTimecareer.Location = new System.Drawing.Point(6, 247);
-            this.dateTimecareer.Name = "dateTimecareer";
-            this.dateTimecareer.Size = new System.Drawing.Size(369, 22);
-            this.dateTimecareer.TabIndex = 12;
+            this.educationTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Education", true));
+            this.educationTxt.Location = new System.Drawing.Point(6, 87);
+            this.educationTxt.Name = "educationTxt";
+            this.educationTxt.Size = new System.Drawing.Size(365, 128);
+            this.educationTxt.TabIndex = 12;
+            this.educationTxt.Text = "";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 68);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 16);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Образование";
+            // 
+            // PostTxt
+            // 
+            this.PostTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dataTable1BindingSource, "Post", true));
+            this.PostTxt.Location = new System.Drawing.Point(7, 33);
+            this.PostTxt.Name = "PostTxt";
+            this.PostTxt.Size = new System.Drawing.Size(364, 22);
+            this.PostTxt.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 16);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Должность";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Отдел";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // saveEmplBtn
             // 
@@ -320,43 +345,18 @@
             this.cancelEmplBtn.Text = "Отмена";
             this.cancelEmplBtn.UseVisualStyleBackColor = true;
             // 
-            // employeesDBDataSet
-            // 
-            this.employeesDBDataSet.DataSetName = "EmployeesDBDataSet";
-            this.employeesDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // employeesDBDataSetBindingSource
             // 
             this.employeesDBDataSetBindingSource.DataSource = this.employeesDBDataSet;
             this.employeesDBDataSetBindingSource.Position = 0;
             // 
-            // departmentsBindingSource
-            // 
-            this.departmentsBindingSource.DataMember = "Departments";
-            this.departmentsBindingSource.DataSource = this.employeesDBDataSet;
-            // 
             // departmentsTableAdapter
             // 
             this.departmentsTableAdapter.ClearBeforeFill = true;
             // 
-            // editEmployeeDataSet
-            // 
-            this.editEmployeeDataSet.DataSetName = "EditEmployeeDataSet";
-            this.editEmployeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.editEmployeeDataSet;
-            // 
             // dataTable1TableAdapter
             // 
             this.dataTable1TableAdapter.ClearBeforeFill = true;
-            // 
-            // dataTable1BindingSource1
-            // 
-            this.dataTable1BindingSource1.DataMember = "DataTable1";
-            this.dataTable1BindingSource1.DataSource = this.editEmployeeDataSet;
             // 
             // EditEmployeeForm
             // 
@@ -376,16 +376,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Сотрудник";
             this.Load += new System.EventHandler(this.EditEmployeeForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSet)).EndInit();
             this.persGB.ResumeLayout(false);
             this.persGB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.editEmployeeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
             this.workGB.ResumeLayout(false);
             this.workGB.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.editEmployeeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
