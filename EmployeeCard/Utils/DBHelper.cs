@@ -114,5 +114,19 @@ namespace EmployeeCard.Utils
             public string FieldName { get; set; }
             public TableField FieldValue { get; set; }
         }
+
+        public static void InsertPhoto(string tableName, string photoFieldName, int id, IEnumerable<byte> photo)
+        {
+            var query = $"UPDATE EmplPersonalData SET {photoFieldName} = @Photo WHERE Id = @Id";
+            var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
+            conn.Open();
+            using (var command = new SqlCommand(query, conn))
+            {
+                command.Parameters.AddWithValue("@Photo", photo);
+                command.Parameters.AddWithValue("@Id", id);
+                command.ExecuteNonQuery();
+            }
+            conn.Close();
+        }
     }
 }

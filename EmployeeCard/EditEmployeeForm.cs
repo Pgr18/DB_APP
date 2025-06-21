@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,7 @@ namespace EmployeeCard
     {
         private bool _isEditMode = false;
         private int _id = 0;
+        private byte[] _photo;
 
         public EditEmployeeForm()
         {
@@ -170,6 +172,13 @@ namespace EmployeeCard
                         TableFieldValue = _id.ToString()
                     }
                 }, workDataFields);
+
+                if (_photo != null)
+                {
+                    DBHelper.InsertPhoto(Constants.TableNames.EmployeesTableName, "Photo", _id, _photo);
+                }
+
+
                 DialogResult = DialogResult.OK;
             }
             else
@@ -183,6 +192,15 @@ namespace EmployeeCard
                 DBHelper.InsertEntry(Constants.TableNames.EmplPersonalDataTableName, personalDataFields);
                 DBHelper.InsertEntry(Constants.TableNames.EmplWorkDataTableName, workDataFields);
                 DialogResult = DialogResult.OK; 
+            }
+        }
+
+        private void choosePhotoBtn_Click(object sender, EventArgs e)
+        {
+            if (chooseFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var path = chooseFileDialog.FileName;
+                _photo = File.ReadAllBytes(path);
             }
         }
     }

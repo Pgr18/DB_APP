@@ -440,5 +440,10 @@ namespace EmployeeCard
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void birthdateTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
