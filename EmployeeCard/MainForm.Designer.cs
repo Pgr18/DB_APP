@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.createEmplMenuItem = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +51,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.Отделы = new System.Windows.Forms.GroupBox();
-            this.DepartmentsCB = new System.Windows.Forms.ComboBox();
+            this.departmentCB = new System.Windows.Forms.ComboBox();
             this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesDBDataSet = new EmployeeCard.EmployeesDBDataSet();
@@ -94,6 +97,7 @@
             this.departmentsTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.DepartmentsTableAdapter();
             this.emplPersonalDataTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.EmplPersonalDataTableAdapter();
             this.emplWorkDataTableAdapter = new EmployeeCard.EmployeesDBDataSetTableAdapters.EmplWorkDataTableAdapter();
+            this.удалитьВСпискеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createEmplMenuItem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -132,7 +136,7 @@
             this.управлениеДаннымиToolStripMenuItem});
             this.createEmplMenuItem.Location = new System.Drawing.Point(0, 0);
             this.createEmplMenuItem.Name = "createEmplMenuItem";
-            this.createEmplMenuItem.Size = new System.Drawing.Size(1445, 28);
+            this.createEmplMenuItem.Size = new System.Drawing.Size(1445, 30);
             this.createEmplMenuItem.TabIndex = 0;
             this.createEmplMenuItem.Text = "menuStrip1";
             // 
@@ -185,7 +189,8 @@
             this.отделыToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавитьToolStripMenuItem,
             this.изменитьToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
+            this.удалитьToolStripMenuItem,
+            this.удалитьВСпискеToolStripMenuItem});
             this.отделыToolStripMenuItem1.Name = "отделыToolStripMenuItem1";
             this.отделыToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.отделыToolStripMenuItem1.Text = "Отделы";
@@ -218,7 +223,7 @@
             this.изменитьToolStripMenuItem1,
             this.удалитьToolStripMenuItem1});
             this.сотрудникиToolStripMenuItem1.Name = "сотрудникиToolStripMenuItem1";
-            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(174, 26);
+            this.сотрудникиToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.сотрудникиToolStripMenuItem1.Text = "Сотрудники";
             // 
             // добавитьToolStripMenuItem1
@@ -247,13 +252,13 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 30);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1445, 866);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1445, 864);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
@@ -272,12 +277,13 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 858);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(459, 856);
             this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // Отделы
             // 
-            this.Отделы.Controls.Add(this.DepartmentsCB);
+            this.Отделы.Controls.Add(this.departmentCB);
             this.Отделы.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Отделы.Location = new System.Drawing.Point(4, 4);
             this.Отделы.Margin = new System.Windows.Forms.Padding(4);
@@ -289,19 +295,20 @@
             this.Отделы.Text = "Отделы";
             this.Отделы.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // DepartmentsCB
+            // departmentCB
             // 
-            this.DepartmentsCB.DataSource = this.departmentsBindingSource;
-            this.DepartmentsCB.DisplayMember = "Title";
-            this.DepartmentsCB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DepartmentsCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DepartmentsCB.FormattingEnabled = true;
-            this.DepartmentsCB.Location = new System.Drawing.Point(4, 19);
-            this.DepartmentsCB.Margin = new System.Windows.Forms.Padding(4);
-            this.DepartmentsCB.Name = "DepartmentsCB";
-            this.DepartmentsCB.Size = new System.Drawing.Size(443, 24);
-            this.DepartmentsCB.TabIndex = 0;
-            this.DepartmentsCB.SelectedIndexChanged += new System.EventHandler(this.DepartmentsCB_SelectedIndexChanged);
+            this.departmentCB.DataSource = this.departmentsBindingSource;
+            this.departmentCB.DisplayMember = "Title";
+            this.departmentCB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.departmentCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.departmentCB.FormattingEnabled = true;
+            this.departmentCB.Location = new System.Drawing.Point(4, 19);
+            this.departmentCB.Margin = new System.Windows.Forms.Padding(4);
+            this.departmentCB.Name = "departmentCB";
+            this.departmentCB.Size = new System.Drawing.Size(443, 24);
+            this.departmentCB.TabIndex = 0;
+            this.departmentCB.ValueMember = "Id";
+            this.departmentCB.SelectedIndexChanged += new System.EventHandler(this.DepartmentsCB_SelectedIndexChanged);
             // 
             // departmentsBindingSource
             // 
@@ -326,7 +333,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(451, 750);
+            this.groupBox1.Size = new System.Drawing.Size(451, 748);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Сотрудники:";
@@ -337,6 +344,14 @@
             this.employeeGV.AllowUserToDeleteRows = false;
             this.employeeGV.AutoGenerateColumns = false;
             this.employeeGV.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.employeeGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.employeeGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -345,15 +360,31 @@
             this.firstNameDataGridViewTextBoxColumn,
             this.middleNameDataGridViewTextBoxColumn});
             this.employeeGV.DataSource = this.employeessBindingSource1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.employeeGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.employeeGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeeGV.Location = new System.Drawing.Point(4, 19);
             this.employeeGV.Margin = new System.Windows.Forms.Padding(4);
             this.employeeGV.Name = "employeeGV";
             this.employeeGV.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.employeeGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.employeeGV.RowHeadersVisible = false;
             this.employeeGV.RowHeadersWidth = 51;
             this.employeeGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.employeeGV.Size = new System.Drawing.Size(443, 727);
+            this.employeeGV.Size = new System.Drawing.Size(443, 725);
             this.employeeGV.TabIndex = 0;
             this.employeeGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeGV_CellContentClick);
             // 
@@ -418,7 +449,7 @@
             this.toolStripButton2,
             this.toolStripSeparator2,
             this.toolStripButton3});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 808);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 806);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(459, 27);
             this.toolStrip1.TabIndex = 2;
@@ -446,6 +477,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(82, 24);
             this.toolStripButton2.Text = "Изменить";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator2
             // 
@@ -467,7 +499,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(470, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(972, 860);
+            this.groupBox2.Size = new System.Drawing.Size(972, 858);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Данные о сотруднике";
@@ -485,7 +517,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(966, 839);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(966, 837);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox3
@@ -494,7 +526,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(960, 413);
+            this.groupBox3.Size = new System.Drawing.Size(960, 412);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Персональные данные";
@@ -516,7 +548,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 392);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 391);
             this.tableLayoutPanel4.TabIndex = 0;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
@@ -526,7 +558,7 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(3, 153);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(948, 236);
+            this.groupBox8.Size = new System.Drawing.Size(948, 235);
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Адрес регистрации";
@@ -538,7 +570,7 @@
             this.Address.Enabled = false;
             this.Address.Location = new System.Drawing.Point(3, 18);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(942, 215);
+            this.Address.Size = new System.Drawing.Size(942, 214);
             this.Address.TabIndex = 0;
             this.Address.Text = "";
             // 
@@ -615,9 +647,9 @@
             // 
             this.groupBox4.Controls.Add(this.tableLayoutPanel5);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(3, 422);
+            this.groupBox4.Location = new System.Drawing.Point(3, 421);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(960, 414);
+            this.groupBox4.Size = new System.Drawing.Size(960, 413);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Рабочие данные";
@@ -637,14 +669,14 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(954, 393);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(954, 392);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.textBox6);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox11.Location = new System.Drawing.Point(3, 346);
+            this.groupBox11.Location = new System.Drawing.Point(3, 345);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(948, 44);
             this.groupBox11.TabIndex = 3;
@@ -672,7 +704,7 @@
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.Location = new System.Drawing.Point(3, 53);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(948, 287);
+            this.groupBox10.Size = new System.Drawing.Size(948, 286);
             this.groupBox10.TabIndex = 2;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Образование";
@@ -683,7 +715,7 @@
             this.Education.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Education.Location = new System.Drawing.Point(3, 18);
             this.Education.Name = "Education";
-            this.Education.Size = new System.Drawing.Size(942, 266);
+            this.Education.Size = new System.Drawing.Size(942, 265);
             this.Education.TabIndex = 0;
             this.Education.Text = "";
             // 
@@ -728,6 +760,13 @@
             // emplWorkDataTableAdapter
             // 
             this.emplWorkDataTableAdapter.ClearBeforeFill = true;
+            // 
+            // удалитьВСпискеToolStripMenuItem
+            // 
+            this.удалитьВСпискеToolStripMenuItem.Name = "удалитьВСпискеToolStripMenuItem";
+            this.удалитьВСпискеToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.удалитьВСпискеToolStripMenuItem.Text = "Удалить в списке";
+            this.удалитьВСпискеToolStripMenuItem.Click += new System.EventHandler(this.удалитьВСпискеToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -795,7 +834,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox Отделы;
-        private System.Windows.Forms.ComboBox DepartmentsCB;
+        private System.Windows.Forms.ComboBox departmentCB;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView employeeGV;
         private System.Windows.Forms.BindingSource employeesDBBindingSource;
@@ -849,6 +888,7 @@
         private EmployeesDBDataSetTableAdapters.EmplPersonalDataTableAdapter emplPersonalDataTableAdapter;
         private System.Windows.Forms.BindingSource emplWorkDataBindingSource;
         private EmployeesDBDataSetTableAdapters.EmplWorkDataTableAdapter emplWorkDataTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem удалитьВСпискеToolStripMenuItem;
     }
 }
 

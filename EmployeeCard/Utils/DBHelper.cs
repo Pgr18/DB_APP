@@ -20,9 +20,7 @@ namespace EmployeeCard.Utils
     }
     public static class DBHelper
     {
-            public static bool InsertEntry(string tableName, Dictionary<string, TableField> fields)
-            {
-            try
+            public static void InsertEntry(string tableName, Dictionary<string, TableField> fields)
             {
                 var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
                 var fieldsNames = string.Join(",", fields.Select(f => f.Key));
@@ -35,22 +33,16 @@ namespace EmployeeCard.Utils
                     return $"'{f.Value.TableFieldValue}'";
                 }));
 
-                var query = $"INSERT INTO {tableName} ({fieldsValues}) VALUES ({fieldsValues})";
+                var query = $"INSERT INTO {tableName} ({fieldsNames}) VALUES ({fieldsValues})";
                 var cmd = new SqlCommand(query, conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                return true;
+               
             }
-            catch
+            public static void UpdateEntry(string tableName, int id, Dictionary<string, TableField> fields)
             {
-                return false;
-            }
-            }
-            public static bool UpdateEntry(string tableName, int id, Dictionary<string, TableField> fields)
-            {
-            try
-            {
+
                 var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
                 var updatingFieldsValues = string.Join(", ", fields.Select (f =>
                 {
@@ -70,17 +62,10 @@ namespace EmployeeCard.Utils
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+                
         }
 
-            public static bool DeleteEntry(string tableName, int id) 
-            {
-            try
+            public static void DeleteEntry(string tableName, int id) 
             {
                 var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
                 var query = $"DELETE FROM {tableName} WHERE Id = {id}";
@@ -88,12 +73,9 @@ namespace EmployeeCard.Utils
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                return true;
+
             }
-            catch
-            {
-                return false;
-            }
-            }
+
+
     }
 }

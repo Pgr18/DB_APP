@@ -22,3 +22,5 @@ D:\DB_APP\EmployeeCard\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 D:\DB_APP\EmployeeCard\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 D:\DB_APP\EmployeeCard\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 D:\DB_APP\EmployeeCard\obj\Debug\Employee.C66DFEA1.Up2Date
+D:\DB_APP\EmployeeCard\obj\Debug\EmployeeCard.DeleteDepForm.resources
+D:\DB_APP\EmployeeCard\obj\Debug\EmployeeCard.EditDepartmentForm.resources

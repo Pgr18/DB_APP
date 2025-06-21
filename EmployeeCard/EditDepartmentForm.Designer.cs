@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.depTitleTxt = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,13 +44,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Название отдела";
             // 
-            // textBox1
+            // depTitleTxt
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(382, 22);
-            this.textBox1.TabIndex = 1;
+            this.depTitleTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.depTitleTxt.Location = new System.Drawing.Point(0, 16);
+            this.depTitleTxt.Name = "depTitleTxt";
+            this.depTitleTxt.Size = new System.Drawing.Size(382, 22);
+            this.depTitleTxt.TabIndex = 1;
             // 
             // saveBtn
             // 
@@ -78,12 +78,13 @@
             this.ClientSize = new System.Drawing.Size(382, 108);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.saveBtn);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.depTitleTxt);
             this.Controls.Add(this.label1);
             this.MinimumSize = new System.Drawing.Size(400, 155);
             this.Name = "EditDepartmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditDepartmentForm";
+            this.Load += new System.EventHandler(this.EditDepartmentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,7 +93,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox depTitleTxt;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button cancelBtn;
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeCard.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -68,12 +69,39 @@ namespace EmployeeCard
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (new EditDepartmentForm().ShowDialog() == DialogResult.OK)
+                {
+                    this.departmentsTableAdapter.Fill(this.employeesDBDataSet.Departments);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (departmentCB.Items.Count == 0)
+                {
+                    MessageBox.Show("Отсутствует выбранный отдел");
+                    return;
+                }
+                var id = 0;
 
+                if (int.TryParse(departmentCB.SelectedValue.ToString(), out id) && new EditDepartmentForm(true, 1).ShowDialog() == DialogResult.OK)
+                {
+                    this.departmentsTableAdapter.Fill(this.employeesDBDataSet.Departments);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         private void RefreshData()
         {
@@ -84,14 +112,56 @@ namespace EmployeeCard
         }
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (new DeleteDepForm().ShowDialog() == DialogResult.OK)
+            try
             {
-                RefreshData();
+                if (departmentCB.Items.Count == 0)
+                {
+                    MessageBox.Show("Отсутствует выбранный отдел");
+                    return;
+                }
+                var id = 0;
+
+                if (int.TryParse(departmentCB.SelectedValue.ToString(), out id)
+                    && MessageBox.Show($"Вы действительно хотите удалить выбранный отдел ({departmentCB.Text})?",
+                    "Удалить выбранный отдел", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    DBHelper.DeleteEntry(Constants.TableNames.DepartmentsTableName, id);
+                    this.departmentsTableAdapter.Fill(this.employeesDBDataSet.Departments);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
 
         }
 
         private void DepartmentsCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void удалитьВСпискеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (new DeleteDepForm().ShowDialog() == DialogResult.OK)
+                {
+                    RefreshData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
