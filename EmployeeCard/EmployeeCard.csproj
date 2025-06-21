@@ -65,6 +65,20 @@
     <Compile Include="EditDepartmentForm.Designer.cs">
       <DependentUpon>EditDepartmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditEmployeeDataSet.cs">
+      <DependentUpon>EditEmployeeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmployeeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditEmployeeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEmployeeForm.Designer.cs">
+      <DependentUpon>EditEmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeesDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,6 +99,9 @@
     <EmbeddedResource Include="EditDepartmentForm.resx">
       <DependentUpon>EditDepartmentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditEmployeeForm.resx">
+      <DependentUpon>EditEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +114,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="EditEmployeeDataSet.xsc">
+      <DependentUpon>EditEmployeeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EditEmployeeDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EditEmployeeDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="EditEmployeeDataSet.xss">
+      <DependentUpon>EditEmployeeDataSet.xsd</DependentUpon>
+    </None>
     <None Include="EmployeesDBDataSet.xsc">
       <DependentUpon>EmployeesDBDataSet.xsd</DependentUpon>
     </None>

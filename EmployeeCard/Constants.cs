@@ -12,7 +12,7 @@ namespace EmployeeCard
         public static class TableNames
         {
             public const string DepartmentsTableName = "Departments";
-            public const string EmployeesTableName = "Employees";
+            public const string EmployeesTableName = "Employeess";
             public const string EmplPersonalDataTableName = "EmplPersonalData";
             public const string EmplWorkDataTableName = "EmplWorkData";
         }

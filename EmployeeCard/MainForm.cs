@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,18 +33,16 @@ namespace EmployeeCard
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "employeesDBDataSet.EmplWorkData". При необходимости она может быть перемещена или удалена.
-            this.emplWorkDataTableAdapter.Fill(this.employeesDBDataSet.EmplWorkData);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "employeesDBDataSet.EmplPersonalData". При необходимости она может быть перемещена или удалена.
-            this.emplPersonalDataTableAdapter.Fill(this.employeesDBDataSet.EmplPersonalData);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "employeesDBDataSet.Employeess". При необходимости она может быть перемещена или удалена.
-            this.employeessTableAdapter.Fill(this.employeesDBDataSet.Employeess);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "employeesDBDataSet.Departments". При необходимости она может быть перемещена или удалена.
-            this.departmentsTableAdapter.Fill(this.employeesDBDataSet.Departments);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "employeesDBDataSet.Employeess". При необходимости она может быть перемещена или удалена.
-            this.employeessTableAdapter.Fill(this.employeesDBDataSet.Employeess);
-            Address.ReadOnly = true;
-            Education.ReadOnly = true;  
+            try
+            {
+                RefreshData();
+                Address.ReadOnly = true;
+                Education.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
 
         }
 
@@ -141,10 +140,7 @@ namespace EmployeeCard
 
         }
 
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void удалитьВСпискеToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -164,6 +160,135 @@ namespace EmployeeCard
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        void DeleteEmployee()
+        {
+            if(employeeGV.Rows.Count == 0 || employeeGV.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Не выбран ни один сотрудник!");
+                return;
+            }
+
+            var id = 0;
+            int.TryParse(employeeGV.SelectedRows[0].Cells[0].Value?.ToString(),out id);
+
+            var firstName = employeeGV.SelectedRows[0].Cells[3].Value?.ToString() ?? string.Empty;
+            var lastName = employeeGV.SelectedRows[0].Cells[2].Value?.ToString() ?? string.Empty;
+            var middleName = employeeGV.SelectedRows[0].Cells[4].Value?.ToString() ?? string.Empty;
+            var fio = $"{lastName} {firstName} {middleName}";
+
+            if (id != 0
+                && MessageBox.Show($"Вы действительно хотите удалить сотрудника {fio}?",
+                "Удаление сотрудника", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DBHelper.DeleteEntry(Constants.TableNames.EmployeesTableName, id);
+                this.employeessTableAdapter.Fill(this.employeesDBDataSet.Employeess);
+            }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)//deleteBtn
+            =>DeleteEmployee();
+
+        private void удалитьToolStripMenuItem1_Click(object sender, EventArgs e)
+            => DeleteEmployee();
+
+        private void RefreshEmployees()
+        {
+            this.emplWorkDataTableAdapter.Fill(this.employeesDBDataSet.EmplWorkData);
+            this.emplPersonalDataTableAdapter.Fill(this.employeesDBDataSet.EmplPersonalData);
+            this.employeessTableAdapter.Fill(this.employeesDBDataSet.Employeess);
+        }
+
+        private void EditEmployee(bool isEditMode = false)
+        {
+            try
+            {
+                if (isEditMode)
+                {
+                    if (employeeGV.Rows.Count == 0 || employeeGV.SelectedRows.Count == 0)
+                    {
+                        MessageBox.Show("Не выбран ни один сотрудник!");
+                        return;
+                    }
+                    var id = 0;
+                    int.TryParse(employeeGV.SelectedRows[0].Cells[0].Value?.ToString(), out id);
+
+                    if (id != 0 && new EditEmployeeForm(true, id).ShowDialog() == DialogResult.OK)
+                    {
+                        RefreshEmployees();
+                    }
+
+                }
+                else if (new EditEmployeeForm().ShowDialog() == DialogResult.OK)
+                {
+                    RefreshEmployees();
+                }
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+               
+
+            }
+        
+
+
+        private void изменитьToolStripMenuItem1_Click(object sender, EventArgs e)
+        => EditEmployee(true);
+        private void toolStripButton2_Click(object sender, EventArgs e)//edit employee
+        => EditEmployee(true);
+
+        private void addEmplBtn_Click(object sender, EventArgs e)
+        => EditEmployee();
+
+        private void добавитьToolStripMenuItem1_Click(object sender, EventArgs e)
+        => EditEmployee();
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+         => Application.Exit();
+
+        private void workExpDisplayTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox11_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void workExpHiddenTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var parsedDate = DateTime.Now;
+                if (DateTime.TryParse(((TextBox)sender).Text, out parsedDate))
+                {
+                    var diff = DateTime.Now - parsedDate;
+                    var totalDays = diff.TotalDays;
+
+                    var years = Math.Floor(totalDays / 365);
+                    var months = Math.Floor((totalDays - years * 365) / 30);
+                    var days = Math.Floor(totalDays - years * 365 - months * 30);
+
+                    workExpDisplayTxt.Text =
+                        $"Лет: {years}, месяцев: {months}, дней: {days}";
+                }
+                else
+                {
+                    workExpDisplayTxt.Text = string.Empty;
+                }
+            } catch (Exception ex)
+            {
+                workExpDisplayTxt.Clear();
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
