@@ -445,5 +445,22 @@ namespace EmployeeCard
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var currentFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            try
+            {
+                var imageName = ((TextBox)sender).Text;
+                ImageBox.ImageLocation
+                    = !string.IsNullOrEmpty(imageName)
+                    ? $"{currentFolder}\\ImgData\\{imageName}"
+                    : null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

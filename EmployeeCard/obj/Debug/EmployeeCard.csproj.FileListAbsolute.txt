@@ -32,3 +32,4 @@ D:\DB_APP\EmployeeCard\bin\Debug\WordTemplateFiller.dll
 D:\DB_APP\EmployeeCard\obj\Debug\EmployeeCard.csproj.SuggestedBindingRedirects.cache
 D:\DB_APP\EmployeeCard\obj\Debug\EmployeeCard.exe.config
 D:\DB_APP\EmployeeCard\bin\Debug\ExelExporter.dll
+D:\DB_APP\EmployeeCard\bin\Debug\ImgData\Descr.txt

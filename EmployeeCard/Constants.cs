@@ -41,6 +41,7 @@ namespace EmployeeCard
                 public const string BirthDate = "BirthDate";
                 public const string Citizenship = "Citizenship";
                 public const string Address = "Address";
+                public const string PhotoFileName = "PhotoFileName";
             }
 
             public static class EmplWorkDataTable

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static EmployeeCard.Utils.DBHelper;
+using System.Reflection;
 
 namespace EmployeeCard
 {
@@ -19,6 +20,7 @@ namespace EmployeeCard
         private bool _isEditMode = false;
         private int _id = 0;
         private byte[] _photo;
+        private string _photoPath;
 
         public EditEmployeeForm()
         {
@@ -55,6 +57,11 @@ namespace EmployeeCard
                     var departmentId = employeeData.FirstOrDefault()?.DepartmentId ?? 0;
                     departmentCB.SelectedValue = departmentId;
                 }
+                choosePhotoBtn.Enabled = true;
+            }
+            else
+            {
+                choosePhotoBtn.Enabled = false ;
             }
 
         }
@@ -148,6 +155,21 @@ namespace EmployeeCard
 
             if (_isEditMode)
             {
+
+                if (!string.IsNullOrEmpty(_photoPath))
+                {
+
+                    var currentFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    var technicalFileName
+                        = $"{DateTime.Now.ToString($"yyyy_MM_dd_hh_mm_ss_ms")}{Path.GetExtension(_photoPath)}";
+                    File.Copy(_photoPath, $"{currentFolder}\\ImgData\\{technicalFileName}", true);
+                    personalDataFields.Add(Constants.FieldsName.EmplPersonalDataTable.PhotoFileName, new TableField
+                    {
+                        TableFieldType = TableFieldTypes.nvarchar,
+                        TableFieldValue = _photoPath
+                    });
+                }
+
                 personalDataFields[Constants.FieldsName.EmplPersonalDataTable.EmployeeId].TableFieldValue
                 = _id.ToString();
                 workDataFields[Constants.FieldsName.EmplWorkDataTable.EmployeeId].TableFieldValue
@@ -173,10 +195,10 @@ namespace EmployeeCard
                     }
                 }, workDataFields);
 
-                if (_photo != null)
+/*                if (_photo != null)
                 {
                     DBHelper.InsertPhoto(Constants.TableNames.EmployeesTableName, "Photo", _id, _photo);
-                }
+                }*/
 
 
                 DialogResult = DialogResult.OK;
@@ -199,8 +221,9 @@ namespace EmployeeCard
         {
             if (chooseFileDialog.ShowDialog() == DialogResult.OK)
             {
-                var path = chooseFileDialog.FileName;
-                _photo = File.ReadAllBytes(path);
+                //var path = chooseFileDialog.FileName;
+                //_photo = File.ReadAllBytes(path);
+                _photoPath = chooseFileDialog.FileName;
             }
         }
     }
