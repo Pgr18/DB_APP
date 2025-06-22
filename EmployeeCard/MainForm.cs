@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -461,6 +462,25 @@ namespace EmployeeCard
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void openCardBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var currentFolder = "D:\\DB_APP\\EmployeeCard";
+                if (!string.IsNullOrEmpty(CardField.Text))
+                {
+                    var path = $"{currentFolder}\\CardsData\\{CardField.Text}.docx";
+                    Process.Start(new ProcessStartInfo(path));
+                }
+            }catch (Exception ex)
+            { MessageBox.Show(ex.ToString()); }
         }
     }
 }

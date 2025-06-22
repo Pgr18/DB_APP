@@ -81,16 +81,17 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.Address = new System.Windows.Forms.RichTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.fKEmplPersonalDataEmployeessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Address = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.citizenshipTxt = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.birthdateTxt = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.ageTxt = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.birthdateTxt = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.citizenshipTxt = new System.Windows.Forms.TextBox();
             this.ImageBox = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -98,10 +99,10 @@
             this.workExpDisplayTxt = new System.Windows.Forms.TextBox();
             this.workExpHiddenTxt = new System.Windows.Forms.TextBox();
             this.fKEmplWorkDataEmployeessBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.Education = new System.Windows.Forms.RichTextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.PostTxt = new System.Windows.Forms.TextBox();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.Education = new System.Windows.Forms.RichTextBox();
             this.emplPersonalDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.emplWorkDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeessBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -118,7 +119,10 @@
             this.exportToExcelDialog = new System.Windows.Forms.SaveFileDialog();
             this.exportToExcelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.exporttoExcelDataSet = new EmployeeCard.exporttoExcelDataSet();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cardGB = new System.Windows.Forms.GroupBox();
+            this.CardField = new System.Windows.Forms.TextBox();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.openCardBtn = new System.Windows.Forms.ToolStripButton();
             this.createEmplMenuItem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -138,16 +142,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKEmplPersonalDataEmployeessBindingSource)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fKEmplWorkDataEmployeessBindingSource)).BeginInit();
-            this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emplPersonalDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emplWorkDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource1)).BeginInit();
@@ -157,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExcelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exporttoExcelDataSet)).BeginInit();
+            this.cardGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // createEmplMenuItem
@@ -513,7 +518,9 @@
             this.toolStripSeparator3,
             this.WordExportBtn,
             this.toolStripSeparator4,
-            this.exportToExcelBtn});
+            this.exportToExcelBtn,
+            this.toolStripSeparator5,
+            this.openCardBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 806);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(532, 31);
@@ -612,10 +619,11 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.70203F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.29797F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(893, 837);
             this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // groupBox3
             // 
@@ -623,7 +631,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(887, 412);
+            this.groupBox3.Size = new System.Drawing.Size(887, 410);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Персональные данные";
@@ -642,7 +650,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(881, 391);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(881, 389);
             this.tableLayoutPanel4.TabIndex = 0;
             this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
@@ -653,10 +661,24 @@
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.Location = new System.Drawing.Point(3, 153);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(875, 235);
+            this.groupBox8.Size = new System.Drawing.Size(875, 233);
             this.groupBox8.TabIndex = 3;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Адрес регистрации";
+            // 
+            // textBox1
+            // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplPersonalDataEmployeessBindingSource, "PhotoFileName", true));
+            this.textBox1.Location = new System.Drawing.Point(6, 21);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(0, 22);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // fKEmplPersonalDataEmployeessBindingSource
+            // 
+            this.fKEmplPersonalDataEmployeessBindingSource.DataMember = "FK_EmplPersonalData_Employeess";
+            this.fKEmplPersonalDataEmployeessBindingSource.DataSource = this.fKEmployeessDepartmentsBindingSource;
             // 
             // Address
             // 
@@ -665,14 +687,9 @@
             this.Address.Enabled = false;
             this.Address.Location = new System.Drawing.Point(3, 18);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(869, 214);
+            this.Address.Size = new System.Drawing.Size(869, 212);
             this.Address.TabIndex = 0;
             this.Address.Text = "";
-            // 
-            // fKEmplPersonalDataEmployeessBindingSource
-            // 
-            this.fKEmplPersonalDataEmployeessBindingSource.DataMember = "FK_EmplPersonalData_Employeess";
-            this.fKEmplPersonalDataEmployeessBindingSource.DataSource = this.fKEmployeessDepartmentsBindingSource;
             // 
             // tableLayoutPanel6
             // 
@@ -707,26 +724,27 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(719, 138);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // groupBox7
+            // groupBox5
             // 
-            this.groupBox7.Controls.Add(this.citizenshipTxt);
-            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.Location = new System.Drawing.Point(3, 95);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(713, 40);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Гражданство";
+            this.groupBox5.Controls.Add(this.ageTxt);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(3, 3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(713, 40);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Возраст";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
-            // citizenshipTxt
+            // ageTxt
             // 
-            this.citizenshipTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplPersonalDataEmployeessBindingSource, "Citizenship", true));
-            this.citizenshipTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.citizenshipTxt.Enabled = false;
-            this.citizenshipTxt.Location = new System.Drawing.Point(3, 18);
-            this.citizenshipTxt.Name = "citizenshipTxt";
-            this.citizenshipTxt.Size = new System.Drawing.Size(707, 22);
-            this.citizenshipTxt.TabIndex = 0;
+            this.ageTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplPersonalDataEmployeessBindingSource, "Age", true));
+            this.ageTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ageTxt.Enabled = false;
+            this.ageTxt.Location = new System.Drawing.Point(3, 18);
+            this.ageTxt.Name = "ageTxt";
+            this.ageTxt.Size = new System.Drawing.Size(707, 22);
+            this.ageTxt.TabIndex = 0;
             // 
             // groupBox6
             // 
@@ -750,27 +768,26 @@
             this.birthdateTxt.TabIndex = 0;
             this.birthdateTxt.TextChanged += new System.EventHandler(this.birthdateTxt_TextChanged);
             // 
-            // groupBox5
+            // groupBox7
             // 
-            this.groupBox5.Controls.Add(this.ageTxt);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox5.Location = new System.Drawing.Point(3, 3);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(713, 40);
-            this.groupBox5.TabIndex = 0;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Возраст";
-            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            this.groupBox7.Controls.Add(this.citizenshipTxt);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Location = new System.Drawing.Point(3, 95);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(713, 40);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Гражданство";
             // 
-            // ageTxt
+            // citizenshipTxt
             // 
-            this.ageTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplPersonalDataEmployeessBindingSource, "Age", true));
-            this.ageTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ageTxt.Enabled = false;
-            this.ageTxt.Location = new System.Drawing.Point(3, 18);
-            this.ageTxt.Name = "ageTxt";
-            this.ageTxt.Size = new System.Drawing.Size(707, 22);
-            this.ageTxt.TabIndex = 0;
+            this.citizenshipTxt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplPersonalDataEmployeessBindingSource, "Citizenship", true));
+            this.citizenshipTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.citizenshipTxt.Enabled = false;
+            this.citizenshipTxt.Location = new System.Drawing.Point(3, 18);
+            this.citizenshipTxt.Name = "citizenshipTxt";
+            this.citizenshipTxt.Size = new System.Drawing.Size(707, 22);
+            this.citizenshipTxt.TabIndex = 0;
             // 
             // ImageBox
             // 
@@ -786,8 +803,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.tableLayoutPanel5);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(3, 421);
+            this.groupBox4.Location = new System.Drawing.Point(3, 419);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(887, 413);
             this.groupBox4.TabIndex = 1;
@@ -798,16 +814,17 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.Controls.Add(this.groupBox11, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.groupBox10, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.groupBox9, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.groupBox10, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.cardGB, 0, 3);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 18);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowCount = 4;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(881, 392);
             this.tableLayoutPanel5.TabIndex = 0;
@@ -817,7 +834,7 @@
             this.groupBox11.Controls.Add(this.workExpDisplayTxt);
             this.groupBox11.Controls.Add(this.workExpHiddenTxt);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox11.Location = new System.Drawing.Point(3, 345);
+            this.groupBox11.Location = new System.Drawing.Point(3, 295);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(875, 44);
             this.groupBox11.TabIndex = 3;
@@ -849,27 +866,6 @@
             this.fKEmplWorkDataEmployeessBindingSource.DataMember = "FK_EmplWorkData_Employeess";
             this.fKEmplWorkDataEmployeessBindingSource.DataSource = this.fKEmployeessDepartmentsBindingSource;
             // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.Education);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox10.Location = new System.Drawing.Point(3, 53);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(875, 286);
-            this.groupBox10.TabIndex = 2;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Образование";
-            // 
-            // Education
-            // 
-            this.Education.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplWorkDataEmployeessBindingSource, "Education", true));
-            this.Education.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Education.Location = new System.Drawing.Point(3, 18);
-            this.Education.Name = "Education";
-            this.Education.Size = new System.Drawing.Size(869, 265);
-            this.Education.TabIndex = 0;
-            this.Education.Text = "";
-            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.PostTxt);
@@ -890,6 +886,27 @@
             this.PostTxt.Name = "PostTxt";
             this.PostTxt.Size = new System.Drawing.Size(869, 22);
             this.PostTxt.TabIndex = 0;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.Education);
+            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox10.Location = new System.Drawing.Point(3, 53);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(875, 236);
+            this.groupBox10.TabIndex = 2;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Образование";
+            // 
+            // Education
+            // 
+            this.Education.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplWorkDataEmployeessBindingSource, "Education", true));
+            this.Education.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Education.Location = new System.Drawing.Point(3, 18);
+            this.Education.Name = "Education";
+            this.Education.Size = new System.Drawing.Size(869, 215);
+            this.Education.TabIndex = 0;
+            this.Education.Text = "";
             // 
             // emplPersonalDataBindingSource
             // 
@@ -959,14 +976,40 @@
             this.exporttoExcelDataSet.DataSetName = "exporttoExcelDataSet";
             this.exporttoExcelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // textBox1
+            // cardGB
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplPersonalDataEmployeessBindingSource, "PhotoFileName", true));
-            this.textBox1.Location = new System.Drawing.Point(6, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(0, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.cardGB.Controls.Add(this.CardField);
+            this.cardGB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cardGB.Location = new System.Drawing.Point(3, 345);
+            this.cardGB.Name = "cardGB";
+            this.cardGB.Size = new System.Drawing.Size(875, 44);
+            this.cardGB.TabIndex = 4;
+            this.cardGB.TabStop = false;
+            this.cardGB.Text = "Карточка сотрудника";
+            // 
+            // CardField
+            // 
+            this.CardField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplWorkDataEmployeessBindingSource, "WorkCard", true));
+            this.CardField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CardField.Location = new System.Drawing.Point(3, 18);
+            this.CardField.Name = "CardField";
+            this.CardField.Size = new System.Drawing.Size(869, 22);
+            this.CardField.TabIndex = 0;
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 6);
+            // 
+            // openCardBtn
+            // 
+            this.openCardBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.openCardBtn.Image = ((System.Drawing.Image)(resources.GetObject("openCardBtn.Image")));
+            this.openCardBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openCardBtn.Name = "openCardBtn";
+            this.openCardBtn.Size = new System.Drawing.Size(136, 24);
+            this.openCardBtn.Text = "Открыть карточку";
+            this.openCardBtn.Click += new System.EventHandler(this.openCardBtn_Click);
             // 
             // MainForm
             // 
@@ -1005,21 +1048,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKEmplPersonalDataEmployeessBindingSource)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fKEmplWorkDataEmployeessBindingSource)).EndInit();
-            this.groupBox10.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.emplPersonalDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emplWorkDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource1)).EndInit();
@@ -1029,6 +1072,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExcelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exporttoExcelDataSet)).EndInit();
+            this.cardGB.ResumeLayout(false);
+            this.cardGB.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1122,6 +1167,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.PictureBox ImageBox;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox cardGB;
+        private System.Windows.Forms.TextBox CardField;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton openCardBtn;
     }
 }
 

@@ -140,6 +140,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CardsData\testt.docx" />
     <None Include="EditEmployeeDataSet.xsc">
       <DependentUpon>EditEmployeeDataSet.xsd</DependentUpon>
     </None>
@@ -189,6 +190,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CardsData\Descr.txt" />
     <Content Include="ImgData\Descr.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

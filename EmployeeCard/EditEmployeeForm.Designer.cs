@@ -64,6 +64,8 @@
             this.dataTable1TableAdapter = new EmployeeCard.EditEmployeeDataSetTableAdapters.DataTable1TableAdapter();
             this.choosePhotoBtn = new System.Windows.Forms.Button();
             this.chooseFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.chooseCardBtn = new System.Windows.Forms.Button();
+            this.chooseCardFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesDBDataSet)).BeginInit();
             this.persGB.SuspendLayout();
@@ -362,11 +364,11 @@
             // 
             // choosePhotoBtn
             // 
-            this.choosePhotoBtn.Location = new System.Drawing.Point(308, 448);
+            this.choosePhotoBtn.Location = new System.Drawing.Point(196, 448);
             this.choosePhotoBtn.Name = "choosePhotoBtn";
-            this.choosePhotoBtn.Size = new System.Drawing.Size(75, 23);
+            this.choosePhotoBtn.Size = new System.Drawing.Size(191, 23);
             this.choosePhotoBtn.TabIndex = 7;
-            this.choosePhotoBtn.Text = "button1";
+            this.choosePhotoBtn.Text = "Выбрать фотографию";
             this.choosePhotoBtn.UseVisualStyleBackColor = true;
             this.choosePhotoBtn.Click += new System.EventHandler(this.choosePhotoBtn_Click);
             // 
@@ -374,11 +376,26 @@
             // 
             this.chooseFileDialog.FileName = "openFileDialog1";
             // 
+            // chooseCardBtn
+            // 
+            this.chooseCardBtn.Location = new System.Drawing.Point(402, 448);
+            this.chooseCardBtn.Name = "chooseCardBtn";
+            this.chooseCardBtn.Size = new System.Drawing.Size(212, 23);
+            this.chooseCardBtn.TabIndex = 8;
+            this.chooseCardBtn.Text = "Карточка сотрудника";
+            this.chooseCardBtn.UseVisualStyleBackColor = true;
+            this.chooseCardBtn.Click += new System.EventHandler(this.chooseCardBtn_Click);
+            // 
+            // chooseCardFileDialog
+            // 
+            this.chooseCardFileDialog.FileName = "openFileDialog1";
+            // 
             // EditEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 483);
+            this.Controls.Add(this.chooseCardBtn);
             this.Controls.Add(this.choosePhotoBtn);
             this.Controls.Add(this.cancelEmplBtn);
             this.Controls.Add(this.saveEmplBtn);
@@ -445,5 +462,7 @@
         private EditEmployeeDataSetTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
         private System.Windows.Forms.Button choosePhotoBtn;
         private System.Windows.Forms.OpenFileDialog chooseFileDialog;
+        private System.Windows.Forms.Button chooseCardBtn;
+        private System.Windows.Forms.OpenFileDialog chooseCardFileDialog;
     }
 }

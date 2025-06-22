@@ -21,10 +21,14 @@ namespace EmployeeCard
         private int _id = 0;
         private byte[] _photo;
         private string _photoPath;
+        private string _cardPath;
+        private string currentFolder;
+
 
         public EditEmployeeForm()
         {
             InitializeComponent();
+            currentFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         }
 
         public EditEmployeeForm(bool isEditMode, int id)
@@ -32,7 +36,7 @@ namespace EmployeeCard
             _isEditMode = isEditMode;
             _id = id;
             InitializeComponent();
-        }
+        }   
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -57,11 +61,14 @@ namespace EmployeeCard
                     var departmentId = employeeData.FirstOrDefault()?.DepartmentId ?? 0;
                     departmentCB.SelectedValue = departmentId;
                 }
-                choosePhotoBtn.Enabled = true;
+                choosePhotoBtn.Visible = true;
+                chooseCardBtn.Visible = false;
+
             }
             else
             {
-                choosePhotoBtn.Enabled = false ;
+                choosePhotoBtn.Visible = false ;
+                chooseCardBtn.Visible = true;
             }
 
         }
@@ -153,6 +160,21 @@ namespace EmployeeCard
                 TableFieldValue = dateTimecareer.Value.ToString("dd.MM.yyyy")
             });
 
+
+            if (!string.IsNullOrEmpty(_cardPath))
+            {
+                var technicalCardName
+                    = $"{DateTime.Now.ToString($"yyyy_MM_dd_hh_mm_ss_ms")}.docx";
+                File.Copy(_cardPath, $"{currentFolder}\\CardsData\\{technicalCardName}",true);
+
+                workDataFields.Add(Constants.FieldsName.EmplWorkDataTable.WorkCard, new TableField
+                {
+                    TableFieldType = TableFieldTypes.nvarchar,
+                    TableFieldValue = technicalCardName
+                });
+            }
+
+
             if (_isEditMode)
             {
 
@@ -224,6 +246,14 @@ namespace EmployeeCard
                 //var path = chooseFileDialog.FileName;
                 //_photo = File.ReadAllBytes(path);
                 _photoPath = chooseFileDialog.FileName;
+            }
+        }
+
+        private void chooseCardBtn_Click(object sender, EventArgs e)
+        {
+            if (chooseCardFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                _cardPath = chooseCardFileDialog.FileName;
             }
         }
     }

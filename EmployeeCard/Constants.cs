@@ -50,6 +50,7 @@ namespace EmployeeCard
                 public const string Post = "Post";
                 public const string Education = "Education";
                 public const string WorkExperience = "WorkExperience";
+                public const string WorkCard = "WorkCard";
             }
 
         }
