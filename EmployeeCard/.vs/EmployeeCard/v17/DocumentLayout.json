@@ -3,15 +3,31 @@
   "WorkspaceRootPath": "D:\\DB_APP\\EmployeeCard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\utils\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:utils\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|d:\\db_app\\employeecard\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|d:\\db_app\\employeecard\\employeesdbdataset.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\editemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:editemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\models\\employeetoxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:models\\employeetoxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\models\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:models\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\utils\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:utils\\dbhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\employeesdbdataset.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:employeesdbdataset.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,12 +35,8 @@
       "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|d:\\db_app\\employeecard\\utils\\addemployeehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\utils\\addemployeehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:utils\\addemployeehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\editemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:editemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,20 +47,12 @@
       "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:imgdata\\descr.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|d:\\db_app\\employeecard\\editemplbckp.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\editemplbckp.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:editemplbckp.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\editemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:editemployeeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|d:\\db_app\\employeecard\\models\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:models\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D847868B-DC04-464F-9814-694828DB1636}|EmployeeCard.csproj|D:\\DB_APP\\EmployeeCard\\cardsdata\\descr.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -98,50 +102,25 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddEmployeeHelper.cs",
-              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Utils\\AddEmployeeHelper.cs",
-              "RelativeDocumentMoniker": "Utils\\AddEmployeeHelper.cs",
-              "ToolTip": "D:\\DB_APP\\EmployeeCard\\Utils\\AddEmployeeHelper.cs",
-              "RelativeToolTip": "Utils\\AddEmployeeHelper.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAQwGcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T11:01:21.707Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EditEmployeeForm.cs",
-              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\EditEmployeeForm.cs",
-              "RelativeDocumentMoniker": "EditEmployeeForm.cs",
-              "ToolTip": "D:\\DB_APP\\EmployeeCard\\EditEmployeeForm.cs",
-              "RelativeToolTip": "EditEmployeeForm.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAqwF4AAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T08:12:48.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainForm.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\MainForm.cs",
               "RelativeDocumentMoniker": "MainForm.cs",
               "ToolTip": "D:\\DB_APP\\EmployeeCard\\MainForm.cs",
               "RelativeToolTip": "MainForm.cs",
-              "ViewState": "AgIAACMBAAAAAAAAAAAUwCUBAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAGICAAAAAAAAAADwv3cCAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-19T05:18:11.845Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Constants.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Constants.cs",
               "RelativeDocumentMoniker": "Constants.cs",
@@ -149,12 +128,11 @@
               "RelativeToolTip": "Constants.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAkwAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T08:20:28.29Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T08:20:28.29Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "DBHelper.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Utils\\DBHelper.cs",
               "RelativeDocumentMoniker": "Utils\\DBHelper.cs",
@@ -162,12 +140,70 @@
               "RelativeToolTip": "Utils\\DBHelper.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAUwFcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T06:53:29.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T06:53:29.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmployeeDto.cs",
+              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Models\\EmployeeDto.cs",
+              "RelativeDocumentMoniker": "Models\\EmployeeDto.cs",
+              "ToolTip": "D:\\DB_APP\\EmployeeCard\\Models\\EmployeeDto.cs",
+              "RelativeToolTip": "Models\\EmployeeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T11:02:35.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "D:\\DB_APP\\EmployeeCard\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T13:04:05.114Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "EditEmployeeForm.cs",
+              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\EditEmployeeForm.cs",
+              "RelativeDocumentMoniker": "EditEmployeeForm.cs",
+              "ToolTip": "D:\\DB_APP\\EmployeeCard\\EditEmployeeForm.cs",
+              "RelativeToolTip": "EditEmployeeForm.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAqwF4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-21T08:12:48.689Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployeeToXml.cs",
+              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Models\\EmployeeToXml.cs",
+              "RelativeDocumentMoniker": "Models\\EmployeeToXml.cs",
+              "ToolTip": "D:\\DB_APP\\EmployeeCard\\Models\\EmployeeToXml.cs",
+              "RelativeToolTip": "Models\\EmployeeToXml.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA7wDMAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T13:24:14.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddEmployeeHelper.cs",
+              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Utils\\AddEmployeeHelper.cs",
+              "RelativeDocumentMoniker": "Utils\\AddEmployeeHelper.cs",
+              "ToolTip": "D:\\DB_APP\\EmployeeCard\\Utils\\AddEmployeeHelper.cs",
+              "RelativeToolTip": "Utils\\AddEmployeeHelper.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwGcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T11:01:21.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "EmployeesDBDataSet.Designer.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\EmployeesDBDataSet.Designer.cs",
               "RelativeDocumentMoniker": "EmployeesDBDataSet.Designer.cs",
@@ -175,12 +211,11 @@
               "RelativeToolTip": "EmployeesDBDataSet.Designer.cs",
               "ViewState": "AgIAADYOAAAAAAAAAAAUwEUOAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T12:13:44.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T12:13:44.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Descr.txt",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\ImgData\\Descr.txt",
               "RelativeDocumentMoniker": "ImgData\\Descr.txt",
@@ -188,12 +223,11 @@
               "RelativeToolTip": "ImgData\\Descr.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-06-21T20:06:05.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T20:06:05.911Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "EditEmplBCKP.txt",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\EditEmplBCKP.txt",
               "RelativeDocumentMoniker": "EditEmplBCKP.txt",
@@ -201,12 +235,11 @@
               "RelativeToolTip": "EditEmplBCKP.txt",
               "ViewState": "AgIAACwAAAAAAAAAAAAcwE4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-06-22T11:13:01.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-22T11:13:01.433Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -214,49 +247,22 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAUwBIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-19T07:34:40.918Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-19T07:34:40.918Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "EditEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\EditEmployeeForm.cs",
               "RelativeDocumentMoniker": "EditEmployeeForm.cs",
               "ToolTip": "D:\\DB_APP\\EmployeeCard\\EditEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "EditEmployeeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T09:26:31.895Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-22T09:26:31.895Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "EmployeeDto.cs",
-              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Models\\EmployeeDto.cs",
-              "RelativeDocumentMoniker": "Models\\EmployeeDto.cs",
-              "ToolTip": "D:\\DB_APP\\EmployeeCard\\Models\\EmployeeDto.cs",
-              "RelativeToolTip": "Models\\EmployeeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-22T11:02:35.356Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\MainForm.cs",
-              "RelativeDocumentMoniker": "MainForm.cs",
-              "ToolTip": "D:\\DB_APP\\EmployeeCard\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-21T13:04:05.114Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Descr.txt",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\CardsData\\Descr.txt",
               "RelativeDocumentMoniker": "CardsData\\Descr.txt",
@@ -268,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "exporttoExcelDataSet.xsd",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\exporttoExcelDataSet.xsd",
               "RelativeDocumentMoniker": "exporttoExcelDataSet.xsd",
@@ -279,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "MainForm.Designer.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "MainForm.Designer.cs",
@@ -291,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "EditDepartmentForm.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\EditDepartmentForm.cs",
               "RelativeDocumentMoniker": "EditDepartmentForm.cs",
@@ -303,19 +309,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "EditEmployeeDataSet.xsd",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\EditEmployeeDataSet.xsd",
               "RelativeDocumentMoniker": "EditEmployeeDataSet.xsd",
               "ToolTip": "D:\\DB_APP\\EmployeeCard\\EditEmployeeDataSet.xsd",
               "RelativeToolTip": "EditEmployeeDataSet.xsd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2025-06-21T08:02:34.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-21T08:02:34.869Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "DeleteDepForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\DeleteDepForm.cs",
               "RelativeDocumentMoniker": "DeleteDepForm.cs",
@@ -326,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "DeleteDepForm.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\DeleteDepForm.cs",
               "RelativeDocumentMoniker": "DeleteDepForm.cs",
@@ -338,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "DeleteDepForm.Designer.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\DeleteDepForm.Designer.cs",
               "RelativeDocumentMoniker": "DeleteDepForm.Designer.cs",
@@ -350,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Resources.Designer.cs",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Properties\\Resources.Designer.cs",
               "RelativeDocumentMoniker": "Properties\\Resources.Designer.cs",
@@ -362,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Settings.settings",
               "DocumentMoniker": "D:\\DB_APP\\EmployeeCard\\Properties\\Settings.settings",
               "RelativeDocumentMoniker": "Properties\\Settings.settings",

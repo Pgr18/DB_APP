@@ -19,6 +19,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using WordTemplateFiller;
 using WordTemplateFiller.Models;
 
@@ -435,9 +436,9 @@ namespace EmployeeCard
                     int.TryParse(departmentCB.SelectedValue.ToString(), out departmentId);
 
                     var exportTableAdapter = new ExportToExcelTableAdapter();
-                    exportTableAdapter.Fill(exporttoExcelDataSet.Employeess, departmentId);
+                    exportTableAdapter.Fill(exportDataSet.Employeess, departmentId);
 
-                    new ExcelExportManager().ExportDataSet(exporttoExcelDataSet, filePath);
+                    new ExcelExportManager().ExportDataSet(exportDataSet, filePath);
                 }
             }
             catch (Exception ex)
@@ -549,6 +550,105 @@ namespace EmployeeCard
             {
                 MessageBox.Show("Не удалось получить идентификатор!");
             }
+        }
+
+        private void xmlExportBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (xmlSaveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = xmlSaveFileDialog.FileName;
+
+                    var departmentId = 0;
+                    int.TryParse(departmentCB.SelectedValue.ToString(), out departmentId);
+
+                    var exportTableAdapter = new ExportToExcelTableAdapter();
+                    exportTableAdapter.Fill(exportDataSet.Employeess, departmentId);
+
+
+                    var employeesList = exportDataSet.Employeess.Select(emp =>
+                    {
+                        return new EmployeeToXml
+                        {
+                            Address = emp.Адрес_регистрации,
+                            Age = emp.Возраст.ToString(),
+                            BirthDate = emp.Дата_рождения,
+                            Citizenship = emp.Гражданство,
+                            Education = emp.Образование,
+                            FirstName = emp.Имя,
+                            LastName = emp.Фамилия,
+                            MiddleName = emp.Отчество,
+                            Post = emp.Должность,
+                            WorkExperience = emp.Стаж
+                        };
+                    }).ToList();
+
+                    var employeesToXmlList = new EmployeeToXmlList
+                    {
+                        Items = employeesList,
+                    };
+
+                    var serializer = new XmlSerializer(typeof(EmployeeToXmlList));
+
+                    using (var writer = new StreamWriter(filePath))
+                    {
+                        serializer.Serialize(writer, employeesToXmlList);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void xmlImportBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (xmlOpenFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = xmlOpenFileDialog.FileName;
+                    var employeesToXmlList = new EmployeeToXmlList();
+                    var serializer = new XmlSerializer(typeof(EmployeeToXmlList));
+
+                    using (var reader = new StreamReader(filePath))
+                    {
+                        employeesToXmlList = (EmployeeToXmlList)serializer.Deserialize(reader);
+                    }
+
+                    var departmentId = 0;
+                    if (employeesToXmlList?.Items?.Count > 0
+                        && int.TryParse(departmentCB.SelectedValue.ToString(), out departmentId))
+                    {
+                        foreach (var employee in employeesToXmlList.Items)
+                        {
+                            AddEmployeeHelper.Add(new EmployeeDto
+                            {
+                                Address = employee.Address,
+                                Age = employee.Age,
+                                BirthDate = employee.BirthDate,
+                                Citizenship = employee.Citizenship,
+                                DepartmentId = departmentId.ToString(),
+                                Education = employee.Education,
+                                EmployeeId = string.Empty,
+                                FirstName = employee.FirstName,
+                                LastName = employee.LastName,
+                                MiddleName = employee.MiddleName,
+                                Post = employee.Post,
+                                WorkExperience = employee.WorkExperience
+                            });
+                        }
+                        RefreshData();
+                    }
+
+                }
+
+
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.ToString()); }
         }
     }
 }
