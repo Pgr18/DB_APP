@@ -389,6 +389,7 @@
             // chooseCardFileDialog
             // 
             this.chooseCardFileDialog.FileName = "openFileDialog1";
+            this.chooseCardFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.chooseCardFileDialog_FileOk);
             // 
             // EditEmployeeForm
             // 

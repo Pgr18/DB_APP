@@ -1,5 +1,9 @@
-﻿using EmployeeCard.EmployeesDBDataSetTableAdapters;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using EmployeeCard.EmployeesDBDataSetTableAdapters;
 using EmployeeCard.exporttoExcelDataSetTableAdapters;
+using EmployeeCard.Models;
 using EmployeeCard.Utils;
 using ExelExporter;
 using System;
@@ -123,7 +127,7 @@ namespace EmployeeCard
         }
         private void RefreshData()
         {
-            
+
             this.emplWorkDataTableAdapter.Fill(this.employeesDBDataSet.EmplWorkData);
             this.emplPersonalDataTableAdapter.Fill(this.employeesDBDataSet.EmplPersonalData);
             this.employeessTableAdapter.Fill(this.employeesDBDataSet.Employeess);
@@ -408,9 +412,9 @@ namespace EmployeeCard
                     var filePath = exportToExcelDialog.FileName;
                     new ExcelExportManager().ExportDataSet(employeesDBDataSet, filePath);
                 }
-            }catch (Exception ex)
+            } catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString()); 
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -431,9 +435,9 @@ namespace EmployeeCard
                     int.TryParse(departmentCB.SelectedValue.ToString(), out departmentId);
 
                     var exportTableAdapter = new ExportToExcelTableAdapter();
-                    exportTableAdapter.Fill(exporttoExcelDataSet.Employeess,departmentId);
+                    exportTableAdapter.Fill(exporttoExcelDataSet.Employeess, departmentId);
 
-                    new ExcelExportManager().ExportDataSet(exporttoExcelDataSet,filePath);
+                    new ExcelExportManager().ExportDataSet(exporttoExcelDataSet, filePath);
                 }
             }
             catch (Exception ex)
@@ -449,7 +453,7 @@ namespace EmployeeCard
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            var currentFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var currentFolder = "D:\\DB_APP\\EmployeeCard";
             try
             {
                 var imageName = ((TextBox)sender).Text;
@@ -479,8 +483,72 @@ namespace EmployeeCard
                     var path = $"{currentFolder}\\CardsData\\{CardField.Text}.docx";
                     Process.Start(new ProcessStartInfo(path));
                 }
-            }catch (Exception ex)
+            } catch (Exception ex)
             { MessageBox.Show(ex.ToString()); }
+        }
+
+        private void excelImportBtn_Click(object sender, EventArgs e)
+        {
+            var departmentId = 0;
+            if (int.TryParse(departmentCB.SelectedValue.ToString(), out departmentId))
+            {
+                if (excelImportFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var data = new List<List<string>>();
+
+                    using (var fs = new FileStream(excelImportFileDialog.FileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        using (var doc = SpreadsheetDocument.Open(fs, false))
+                        {
+                            var workbookPart = doc.WorkbookPart;
+                            var worksheetPart = workbookPart.WorksheetParts
+                                .FirstOrDefault(wsp => wsp.Uri.OriginalString.IndexOf("sheet1") != -1);
+                            var sheetData = worksheetPart?.Worksheet.Elements<SheetData>().FirstOrDefault();
+
+                            foreach (var row in sheetData.Elements<Row>())
+                            {
+                                var rowData = new List<string>();
+                                foreach (var cell in row.Elements<Cell>())
+                                {
+                                    var value = cell.InnerText;
+                                    if (cell.DataType != null && cell.DataType.Value == CellValues.SharedString)
+                                    {
+                                        var index = int.Parse(value);
+                                        value = workbookPart.SharedStringTablePart.SharedStringTable.Elements<SharedStringItem>().ElementAt(index).InnerText;
+                                    }
+                                    rowData.Add(value);
+                                }
+                                data.Add(rowData);
+                            }
+                        }
+                    }
+
+                    foreach (var dataRow in data)
+                    {
+                        AddEmployeeHelper.Add(new EmployeeDto
+                        {
+                            Address = dataRow[Constants.FieldsName.ExcelCells.J],
+                            Age = dataRow[Constants.FieldsName.ExcelCells.D],
+                            BirthDate = dataRow[Constants.FieldsName.ExcelCells.E],
+                            Citizenship = dataRow[Constants.FieldsName.ExcelCells.H],
+                            DepartmentId = departmentId.ToString(),
+                            Education = dataRow[Constants.FieldsName.ExcelCells.I],
+                            EmployeeId = string.Empty,
+                            FirstName = dataRow[Constants.FieldsName.ExcelCells.B],
+                            LastName = dataRow[Constants.FieldsName.ExcelCells.A],
+                            MiddleName = dataRow[Constants.FieldsName.ExcelCells.C],
+                            Post = dataRow[Constants.FieldsName.ExcelCells.F],
+                            WorkExperience = dataRow[Constants.FieldsName.ExcelCells.G]
+                        });
+                    }
+                    RefreshData();
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Не удалось получить идентификатор!");
+            }
         }
     }
 }

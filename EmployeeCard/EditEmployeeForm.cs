@@ -80,163 +80,24 @@ namespace EmployeeCard
 
         private void saveEmplBtn_Click(object sender, EventArgs e)
         {
-            var employeeFields = new Dictionary<string, TableField>();
-            employeeFields.Add(Constants.FieldsName.EmployeesTable.DepartmentId, new TableField
+            AddEmployeeHelper.Add(new Models.EmployeeDto
             {
-                TableFieldType = TableFieldTypes.integer,
-                TableFieldValue = departmentCB.SelectedValue.ToString()
-            });
-            employeeFields.Add(Constants.FieldsName.EmployeesTable.LastName, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = lastNameTxt.Text
-            });
-            employeeFields.Add(Constants.FieldsName.EmployeesTable.FirstName, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = firstNameTxt.Text
-            });
-            employeeFields.Add(Constants.FieldsName.EmployeesTable.MiddleName, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = middleNameTxt.Text
-            });
-
-            var personalDataFields = new Dictionary<string, TableField>();
-            var workDataFields = new Dictionary<string, TableField>();
-
-
-
-            //Pers data
-
-
-            personalDataFields.Add(Constants.FieldsName.EmplPersonalDataTable.EmployeeId, new TableField
-            {
-                TableFieldType= TableFieldTypes.integer,
-                TableFieldValue = string.Empty
-            });
-            personalDataFields.Add(Constants.FieldsName.EmplPersonalDataTable.Age, new TableField
-            {
-                TableFieldType = TableFieldTypes.integer,
-                TableFieldValue = Math.Ceiling((DateTime.Now - dateTimebirth.Value).TotalDays / 365).ToString()
-            });
-            personalDataFields.Add(Constants.FieldsName.EmplPersonalDataTable.BirthDate, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = dateTimebirth.Value.ToString("dd.MM.yyyy")
-            });
-            personalDataFields.Add(Constants.FieldsName.EmplPersonalDataTable.Citizenship, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = citizenTxt.Text
-            });
-            personalDataFields.Add(Constants.FieldsName.EmplPersonalDataTable.Address, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = addressTxt.Text
-            });
-
-            //work data
-
-            workDataFields.Add(Constants.FieldsName.EmplWorkDataTable.EmployeeId , new TableField
-            {
-                TableFieldType= TableFieldTypes.integer,
-                TableFieldValue = string.Empty
-            });
-
-            workDataFields.Add(Constants.FieldsName.EmplWorkDataTable.Post, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = PostTxt.Text
-            });
-            workDataFields.Add(Constants.FieldsName.EmplWorkDataTable.Education, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = educationTxt.Text
-            });
-            workDataFields.Add(Constants.FieldsName.EmplWorkDataTable.WorkExperience, new TableField
-            {
-                TableFieldType = TableFieldTypes.nvarchar,
-                TableFieldValue = dateTimecareer.Value.ToString("dd.MM.yyyy")
-            });
-
-
-            if (!string.IsNullOrEmpty(_cardPath))
-            {
-                var technicalCardName
-                    = $"{DateTime.Now.ToString($"yyyy_MM_dd_hh_mm_ss_ms")}.docx";
-                File.Copy(_cardPath, $"{currentFolder}\\CardsData\\{technicalCardName}",true);
-
-                workDataFields.Add(Constants.FieldsName.EmplWorkDataTable.WorkCard, new TableField
-                {
-                    TableFieldType = TableFieldTypes.nvarchar,
-                    TableFieldValue = technicalCardName
-                });
-            }
-
-
-            if (_isEditMode)
-            {
-
-                if (!string.IsNullOrEmpty(_photoPath))
-                {
-
-                    var currentFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                    var technicalFileName
-                        = $"{DateTime.Now.ToString($"yyyy_MM_dd_hh_mm_ss_ms")}{Path.GetExtension(_photoPath)}";
-                    File.Copy(_photoPath, $"{currentFolder}\\ImgData\\{technicalFileName}", true);
-                    personalDataFields.Add(Constants.FieldsName.EmplPersonalDataTable.PhotoFileName, new TableField
-                    {
-                        TableFieldType = TableFieldTypes.nvarchar,
-                        TableFieldValue = _photoPath
-                    });
-                }
-
-                personalDataFields[Constants.FieldsName.EmplPersonalDataTable.EmployeeId].TableFieldValue
-                = _id.ToString();
-                workDataFields[Constants.FieldsName.EmplWorkDataTable.EmployeeId].TableFieldValue
-                    = _id.ToString();
-
-                DBHelper.UpdateEntry(Constants.TableNames.EmployeesTableName, _id, employeeFields);
-                DBHelper.UpdateEntry(Constants.TableNames.EmplPersonalDataTableName, new FieldForUpdate
-                {
-                    FieldName = Constants.FieldsName.EmplPersonalDataTable.EmployeeId,
-                    FieldValue = new TableField
-                    {
-                        TableFieldType = TableFieldTypes.integer,
-                        TableFieldValue = _id.ToString()
-                    }
-                }, personalDataFields);
-                DBHelper.UpdateEntry(Constants.TableNames.EmplWorkDataTableName, new FieldForUpdate
-                {
-                    FieldName = Constants.FieldsName.EmplWorkDataTable.EmployeeId,
-                    FieldValue = new TableField
-                    {
-                        TableFieldType = TableFieldTypes.integer,
-                        TableFieldValue = _id.ToString()
-                    }
-                }, workDataFields);
-
-/*                if (_photo != null)
-                {
-                    DBHelper.InsertPhoto(Constants.TableNames.EmployeesTableName, "Photo", _id, _photo);
-                }*/
-
-
-                DialogResult = DialogResult.OK;
-            }
-            else
-            {
-                var employeeId = DBHelper.InsertEntry(Constants.TableNames.EmployeesTableName, employeeFields);
-                personalDataFields[Constants.FieldsName.EmplPersonalDataTable.EmployeeId].TableFieldValue 
-                    = employeeId.ToString();
-                workDataFields[Constants.FieldsName.EmplWorkDataTable.EmployeeId].TableFieldValue
-                    = employeeId.ToString();
-
-                DBHelper.InsertEntry(Constants.TableNames.EmplPersonalDataTableName, personalDataFields);
-                DBHelper.InsertEntry(Constants.TableNames.EmplWorkDataTableName, workDataFields);
-                DialogResult = DialogResult.OK; 
-            }
+                Address = addressTxt.Text,
+                Age = Math.Ceiling((DateTime.Now - dateTimebirth.Value).TotalDays / 365).ToString(),
+                BirthDate = dateTimebirth.Value.ToString("dd.MM.yyyy"),
+                CardPath = _cardPath,
+                Citizenship = citizenTxt.Text,
+                DepartmentId = departmentCB.SelectedValue.ToString(),
+                Education = educationTxt.Text,
+                EmployeeId = _id.ToString(),
+                FirstName = firstNameTxt.Text,
+                MiddleName = middleNameTxt.Text,
+                LastName = lastNameTxt.Text,
+                PhotoPath = _photoPath,
+                Post = PostTxt.Text,
+                WorkExperience = dateTimecareer.Value.ToString("dd.MM.yyyy")
+            },_isEditMode);
+            DialogResult = DialogResult.OK;
         }
 
         private void choosePhotoBtn_Click(object sender, EventArgs e)
@@ -255,6 +116,11 @@ namespace EmployeeCard
             {
                 _cardPath = chooseCardFileDialog.FileName;
             }
+        }
+
+        private void chooseCardFileDialog_FileOk(object sender, CancelEventArgs e)
+        {
+
         }
     }
 }

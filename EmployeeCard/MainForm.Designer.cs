@@ -76,6 +76,8 @@
             this.WordExportBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.exportToExcelBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.openCardBtn = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -103,6 +105,8 @@
             this.PostTxt = new System.Windows.Forms.TextBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.Education = new System.Windows.Forms.RichTextBox();
+            this.cardGB = new System.Windows.Forms.GroupBox();
+            this.CardField = new System.Windows.Forms.TextBox();
             this.emplPersonalDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.emplWorkDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeessBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -119,10 +123,9 @@
             this.exportToExcelDialog = new System.Windows.Forms.SaveFileDialog();
             this.exportToExcelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.exporttoExcelDataSet = new EmployeeCard.exporttoExcelDataSet();
-            this.cardGB = new System.Windows.Forms.GroupBox();
-            this.CardField = new System.Windows.Forms.TextBox();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.openCardBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.excelImportBtn = new System.Windows.Forms.ToolStripButton();
+            this.excelImportFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.createEmplMenuItem.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -152,6 +155,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.fKEmplWorkDataEmployeessBindingSource)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            this.cardGB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emplPersonalDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emplWorkDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource1)).BeginInit();
@@ -161,7 +165,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExcelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exporttoExcelDataSet)).BeginInit();
-            this.cardGB.SuspendLayout();
             this.SuspendLayout();
             // 
             // createEmplMenuItem
@@ -520,10 +523,12 @@
             this.toolStripSeparator4,
             this.exportToExcelBtn,
             this.toolStripSeparator5,
-            this.openCardBtn});
+            this.openCardBtn,
+            this.toolStripSeparator6,
+            this.excelImportBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 806);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(532, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(532, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -533,7 +538,7 @@
             this.addEmplBtn.Image = ((System.Drawing.Image)(resources.GetObject("addEmplBtn.Image")));
             this.addEmplBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addEmplBtn.Name = "addEmplBtn";
-            this.addEmplBtn.Size = new System.Drawing.Size(80, 28);
+            this.addEmplBtn.Size = new System.Drawing.Size(80, 24);
             this.addEmplBtn.Text = "Добавить";
             this.addEmplBtn.Click += new System.EventHandler(this.addEmplBtn_Click);
             // 
@@ -596,6 +601,21 @@
             this.exportToExcelBtn.Size = new System.Drawing.Size(119, 28);
             this.exportToExcelBtn.Text = "Экспорт в Excel";
             this.exportToExcelBtn.Click += new System.EventHandler(this.exportToExcelBtn_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 6);
+            // 
+            // openCardBtn
+            // 
+            this.openCardBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.openCardBtn.Image = ((System.Drawing.Image)(resources.GetObject("openCardBtn.Image")));
+            this.openCardBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openCardBtn.Name = "openCardBtn";
+            this.openCardBtn.Size = new System.Drawing.Size(136, 24);
+            this.openCardBtn.Text = "Открыть карточку";
+            this.openCardBtn.Click += new System.EventHandler(this.openCardBtn_Click);
             // 
             // groupBox2
             // 
@@ -908,6 +928,26 @@
             this.Education.TabIndex = 0;
             this.Education.Text = "";
             // 
+            // cardGB
+            // 
+            this.cardGB.Controls.Add(this.CardField);
+            this.cardGB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cardGB.Location = new System.Drawing.Point(3, 345);
+            this.cardGB.Name = "cardGB";
+            this.cardGB.Size = new System.Drawing.Size(875, 44);
+            this.cardGB.TabIndex = 4;
+            this.cardGB.TabStop = false;
+            this.cardGB.Text = "Карточка сотрудника";
+            // 
+            // CardField
+            // 
+            this.CardField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplWorkDataEmployeessBindingSource, "WorkCard", true));
+            this.CardField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CardField.Location = new System.Drawing.Point(3, 18);
+            this.CardField.Name = "CardField";
+            this.CardField.Size = new System.Drawing.Size(869, 22);
+            this.CardField.TabIndex = 0;
+            // 
             // emplPersonalDataBindingSource
             // 
             this.emplPersonalDataBindingSource.DataMember = "EmplPersonalData";
@@ -976,40 +1016,25 @@
             this.exporttoExcelDataSet.DataSetName = "exporttoExcelDataSet";
             this.exporttoExcelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // cardGB
+            // toolStripSeparator6
             // 
-            this.cardGB.Controls.Add(this.CardField);
-            this.cardGB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cardGB.Location = new System.Drawing.Point(3, 345);
-            this.cardGB.Name = "cardGB";
-            this.cardGB.Size = new System.Drawing.Size(875, 44);
-            this.cardGB.TabIndex = 4;
-            this.cardGB.TabStop = false;
-            this.cardGB.Text = "Карточка сотрудника";
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 6);
             // 
-            // CardField
+            // excelImportBtn
             // 
-            this.CardField.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fKEmplWorkDataEmployeessBindingSource, "WorkCard", true));
-            this.CardField.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CardField.Location = new System.Drawing.Point(3, 18);
-            this.CardField.Name = "CardField";
-            this.CardField.Size = new System.Drawing.Size(869, 22);
-            this.CardField.TabIndex = 0;
+            this.excelImportBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.excelImportBtn.Image = ((System.Drawing.Image)(resources.GetObject("excelImportBtn.Image")));
+            this.excelImportBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.excelImportBtn.Name = "excelImportBtn";
+            this.excelImportBtn.Size = new System.Drawing.Size(126, 24);
+            this.excelImportBtn.Text = "Импорт из Excel";
+            this.excelImportBtn.Click += new System.EventHandler(this.excelImportBtn_Click);
             // 
-            // toolStripSeparator5
+            // excelImportFileDialog
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 6);
-            // 
-            // openCardBtn
-            // 
-            this.openCardBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.openCardBtn.Image = ((System.Drawing.Image)(resources.GetObject("openCardBtn.Image")));
-            this.openCardBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openCardBtn.Name = "openCardBtn";
-            this.openCardBtn.Size = new System.Drawing.Size(136, 24);
-            this.openCardBtn.Text = "Открыть карточку";
-            this.openCardBtn.Click += new System.EventHandler(this.openCardBtn_Click);
+            this.excelImportFileDialog.FileName = "openFileDialog1";
+            this.excelImportFileDialog.Filter = "(Excel files) | *.xlsx";
             // 
             // MainForm
             // 
@@ -1063,6 +1088,8 @@
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
+            this.cardGB.ResumeLayout(false);
+            this.cardGB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emplPersonalDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emplWorkDataBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeessBindingSource1)).EndInit();
@@ -1072,8 +1099,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exportToExcelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exporttoExcelDataSet)).EndInit();
-            this.cardGB.ResumeLayout(false);
-            this.cardGB.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1171,6 +1196,9 @@
         private System.Windows.Forms.TextBox CardField;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton openCardBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripButton excelImportBtn;
+        private System.Windows.Forms.OpenFileDialog excelImportFileDialog;
     }
 }
 
