@@ -20,10 +20,9 @@ namespace EmployeeCard.Utils
     }
     public static class DBHelper
     {
-            public static bool InsertEntry(string tableName, Dictionary<string, TableField> fields)
+            public static int InsertEntry(string tableName, Dictionary<string, TableField> fields)
             {
-            try
-            {
+                var res = 0;
                 var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
                 var fieldsNames = string.Join(",", fields.Select(f => f.Key));
                 var fieldsValues = string.Join(",", fields.Select(f =>
@@ -35,65 +34,99 @@ namespace EmployeeCard.Utils
                     return $"'{f.Value.TableFieldValue}'";
                 }));
 
-                var query = $"INSERT INTO {tableName} ({fieldsValues}) VALUES ({fieldsValues})";
+                var query = $"INSERT INTO {tableName} ({fieldsNames}) VALUES ({fieldsValues})";
                 var cmd = new SqlCommand(query, conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                return true;
-            }
-            catch
+
+            var selectLastItemQuery = $"SELECT TOP 1 Id FROM {tableName} ORDER BY Id DESC";
+            var selectedLastItemCmd = new SqlCommand(selectLastItemQuery, conn);
+            conn.Open();
+            var reader = selectedLastItemCmd.ExecuteReader();
+            while(reader.Read())
             {
-                return false;
+                int.TryParse(reader[0].ToString(), out res);
+
             }
+            conn.Close();
+            return res;
+
             }
-            public static bool UpdateEntry(string tableName, int id, Dictionary<string, TableField> fields)
+            public static void UpdateEntry(string tableName, FieldForUpdate fieldForUpdate, Dictionary<string, TableField> fields)
             {
-            try
-            {
+
                 var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
-                var updatingFieldsValues = string.Join(", ", fields.Select (f =>
-                {
-                    var fieldValue = string.Empty;
-                    if (f.Value.TableFieldType == TableFieldTypes.integer)
-                    {
-                        fieldValue = f.Value.TableFieldValue;
-                    }
-                    else
-                    {
-                        fieldValue = $"'{f.Value.TableFieldValue}'";
-                    }
-                    return $"{f.Key} = {fieldValue}";
-                }));
-                var query = $"UPDATE {tableName} SET {updatingFieldsValues} WHERE Id = {id}";
+                var updatingFieldsValues = string.Join(", ", fields.Select (f
+                  => $"{f.Key}={GetFieldValueByType(f.Value)}"));
+                var query 
+                    = $"UPDATE {tableName} SET {updatingFieldsValues} WHERE {fieldForUpdate.FieldName}= {GetFieldValueByType(fieldForUpdate.FieldValue)}";
                 var cmd = new SqlCommand(query, conn);
                 conn.Open();
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                return true;
             }
-            catch
+
+
+        public static void UpdateEntry(string tableName, int id, Dictionary<string, TableField> fields)
+            => UpdateEntry(tableName, new FieldForUpdate
             {
-                return false;
+                FieldName = Constants.FieldsName.Id,
+                FieldValue = new TableField
+                {
+                    TableFieldType = TableFieldTypes.integer,
+                    TableFieldValue = id.ToString()
+                }
+            }, fields);
+
+            public static void DeleteEntry(string tableName, FieldForUpdate fieldForUpdate) 
+            {
+
+                var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
+                var query = $"DELETE FROM {tableName} WHERE {fieldForUpdate.FieldName} = {GetFieldValueByType(fieldForUpdate.FieldValue)}";
+                var cmd = new SqlCommand(query, conn);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
             }
+
+        public static void DeleteEntry(string tableName, int id)
+        
+            => DeleteEntry(tableName, new FieldForUpdate
+            {
+                FieldName = Constants.FieldsName.Id,
+                FieldValue = new TableField
+                {
+                    TableFieldType = TableFieldTypes.integer,
+                    TableFieldValue = id.ToString()
+                }
+            });
+        
+
+        private static string GetFieldValueByType(TableField tablefield)
+            => tablefield.TableFieldType == TableFieldTypes.integer
+            ? tablefield.TableFieldValue : $"'{tablefield.TableFieldValue}'";
+
+
+        public class FieldForUpdate
+        {
+            public string FieldName { get; set; }
+            public TableField FieldValue { get; set; }
         }
 
-            public static bool DeleteEntry(string tableName, int id) 
+        public static void InsertPhoto(string tableName, string photoFieldName, int id, IEnumerable<byte> photo)
+        {
+            var query = $"UPDATE EmplPersonalData SET {photoFieldName} = @Photo WHERE Id = @Id";
+            var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
+            conn.Open();
+            using (var command = new SqlCommand(query, conn))
             {
-            try
-            {
-                var conn = new SqlConnection(Properties.Settings.Default.EmployeesDBConnectionString);
-                var query = $"DELETE FROM {tableName} WHERE Id = {id}";
-                var cmd = new SqlCommand(query, conn);
-                conn.Open();
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                return true;
+                command.Parameters.AddWithValue("@Photo", photo);
+                command.Parameters.AddWithValue("@Id", id);
+                command.ExecuteNonQuery();
             }
-            catch
-            {
-                return false;
-            }
-            }
+            conn.Close();
+        }
     }
 }
